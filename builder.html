@@ -5,14 +5,42 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.190.0/aws-sdk.min.js" type="application/javascript"></script>
 <script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@1.31.0/dist/aws-cognito-sdk.min.js" type="application/javascript"></script>
 <script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@1.31.0/dist/amazon-cognito-identity.min.js" type="application/javascript"></script>
+<style>
+    #div1 {
+        float: left;
+        width: 500px;
+        height: 1000px;
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid black;
+    } 
+    #div2, #div3, #div4, #div5, #div6 {
+        float: left;
+        width: 500px;
+        height: 100px;
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid black;
+    }
+</style>
 </head>
-
+    
 <body>
     <h2>Welcome</h2>
     <button onclick="logout()">Logout</button>
     <h2>Builder Tool</h2>
-    <canvas id="myCanvas" width="400" height="500"></canvas>
-    <input type="button" style="z-index:2; position:absolute; top:50; left:50" value="test"/>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <img src="orange.jpg" draggable="true" ondragstart="drag(event)" id="drag1" width="450" height="90"></div>
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <img src="apples2.jpg" draggable="true" ondragstart="drag(event)" id="drag2" width="450" height="90"></div>
+    <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <img src="strawberry.jpg" draggable="true" ondragstart="drag(event)" id="drag3" width="450" height="90"></div>
+    <div id="div5" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <img src="pomegranate.jpg" draggable="true" ondragstart="drag(event)" id="drag4" width="450" height="90"></div>
+    <div id="div6" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <img src="kiwi.jpg" draggable="true" ondragstart="drag(event)" id="drag5" width="450" height="90"></div>
+    
 </body>
 <script src="script.js"></script>
 </html>
