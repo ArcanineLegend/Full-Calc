@@ -2,3 +2,13 @@
   display: grid;
   grid-template-columns: auto auto auto auto;
 }
+fieldset {
+  display: block;
+  margin-left: 1px;
+  margin-righjt: 1px;
+  padding-top: 0.35em;
+  padding-bottom: 0.600em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  border: 1px groove (1);
+}
