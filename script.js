@@ -20,10 +20,10 @@ if(!!window.AWSCognito && !!window.AmazonCognitoIdentity){
 }
 
 // Config for Amazon Cognito service specifically.
-AWSCognito.config.region = 'us-east-1';
+AWSCognito.config.region = 'us-east-2';
 var poolData = {
-    UserPoolId : 'us-east-1_VmYAu5V3z', // your user pool id here pro240pool
-    ClientId : '4g0cno5sua5do9lc4g0nkp7pg0' // your app client id here pro240client
+    UserPoolId : 'us-east-2_ZGZum8WNC', // your user pool id here pro240pool
+    ClientId : '44q1gbqevfoa14fv35pmpch40s' // your app client id here pro240client
 };
 var userPool = new AWSCognito.CognitoIdentityServiceProvider.CognitoUserPool(poolData);
 var cognitoUser;
