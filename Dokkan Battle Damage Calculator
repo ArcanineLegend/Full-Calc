@@ -1,0 +1,179 @@
+<html>
+ <head>
+<title>Dokkan Battle Damage Calculator</title>
+ </head>
+ <body>
+<h1>Dokkan Battle Damage Calculator</h1>
+
+<p> <i>This calculator will determine what the attack stat of a Dokkan character will be upon performing a super attack. It also displays the 12-ki attack value.
+Please input as much as you can in the following form.</i>
+</p>
+
+<fieldset>
+    <legend> <b> INITIAL STATS </b>:</legend>
+	
+	<p>Enter the base attack of the unit: 
+        <input type="number" id="baseatk" value="0"/>
+    </p>
+	
+	<p>Enter the attack stat increase from the potential system: 
+        <input type="number" id="potboost" value="0"/>
+    </p>	
+		
+	<p>Enter the 'Super Attack Boost' skill level from the potential system: 
+        <input type="number" id="spboost" value="0"/>
+    </p>
+</fieldset>
+
+<br>
+
+<fieldset>
+    <legend> <b> LEADER SKILL BOOST </b>:</legend>
+	
+	<p>Enter the attack boost from the first leader: 
+        <input type="number" id="leader1" value="0"/>
+    </p>
+	
+	<p>Enter the attack boost from the second leader: 
+        <input type="number" id="leader2" value="0"/>
+    </p>	
+</fieldset>
+
+<br>
+
+<fieldset>
+    <legend> <b> SUPER ATTACK STATS </b>:</legend>
+	
+	<p> <i> The following information can be found on dbz.space for your character</i>
+	</p>
+	
+	<p>Enter the 12-ki attack bonus: 
+        <input type="number" id="fullki" value="0"/>
+    </p>
+	
+	<p>Enter the attack bonus due to the Super Attack Level: 
+        <input type="number" id="spatk" value="0"/>
+    </p>	
+	
+	<p> <b> Common Super Attack 10 bonuses:</b>
+	</p>
+	
+	<p>&#9654 Extreme: 355% </p>
+	<p>&#9654 Supreme: 430% </p>
+	<p>&#9654 Immense: 505% </p>
+</fieldset>
+
+<br>
+
+<fieldset>
+    <legend> <b> PASSIVE-BASED BOOSTS (start of turn) </b>:</legend>
+    
+	<p>
+	Enter any passive-based attack increases the character gets
+	at the beginning of the turn due to their own passive. 
+	</p>
+	
+	<p>
+	<b> Note: </b> If a character's passive says that the character
+	achieves an attack increase when performing a Super Attack, it 
+	does not belong here.
+	</p>
+	
+	<p> <i>Percentage-based increases:</i>
+        <input type="number" id="startperc" value="0"/>
+    </p>
+	
+	<p> <i>Flat increases: </i>
+        <input type="number" id="startflat" value="0"/>
+    </p>	
+	
+	<br>
+	
+	<p>
+	Enter any attack increases the character gets at the beginning of 
+	the turn due to an ally's passive. This includes the boost given by
+    characters such as TEQ Vegito.	
+	</p>
+	
+	<p> <i>Percentage-based increases:</i>
+        <input type="number" id="fstartperc" value="0"/>
+    </p>
+	
+	<p> <i>Flat increases: </i>
+        <input type="number" id="fstartflat" value="0"/>
+    </p>	
+</fieldset>
+
+<br>
+
+<fieldset>
+    <legend> <b> LINK SKILL BOOSTS (start of turn) </b> </legend>
+    
+	<p>
+	Enter the sum of any percentage-based and flat attack increases 
+	gained by the character through link skills AT THE START OF THE TURN. 
+	</p>
+	
+	<p>
+	<b> Note: </b> This does not include links that activate upon supering,
+	such as 'Kamehameha', 'Limit-Breaking Form', or 'Power Bestowed by God'.
+	</p>
+	
+	<p> <i>Percentage-based increases:</i>
+        <input type="number" id="linkperc" value="0"/>
+    </p>
+	
+	<p> <i>Flat increases: </i>
+        <input type="number" id="linkflat" value="0"/>
+    </p>	
+	
+</fieldset>
+
+<br>
+
+<fieldset>
+    <legend> <b> ATTACK INCREASES WHEN SUPERING </b> </legend>
+    
+	<p>
+	Enter any attack boosts from a character's passive as achieved when performing a
+    Super Attack (such as the boost from TEQ Godtenk's passive). This is usually signified
+	by a passive that says "ATK +X% when performing a super attack".
+	</p>
+	
+	<p> <i>Percentage-based increases:</i>
+        <input type="number" id="spatkboost" value="0"/>
+    </p>
+	
+	<p> <i>Flat increases:</i>
+        <input type="number" id="spatkboostflat" value="0"/>
+    </p>
+	
+	<p>
+	Enter the sum of any attack boosts obtained due to performing a super
+	attack NOT related to passives. This includes: </p>
+
+  <p>&#9654 attack boosts from links such as 'Kamehameha', 'Limit-Breaking Form', 
+  and 'Power Bestowed by God' </p>
+  <p>&#9654 attack boosts from the super attack itself (such as the boost from 
+  Godtenk's 11-ki super or the boost given to all allies by an AGL Super 
+  Vegito super attack) </p> 
+
+	
+	<p> <i>Percentage-based increases:</i>
+        <input type="number" id="endperc" value="0"/>
+    </p>
+	
+	<p> <i>Flat increases: </i>
+        <input type="number" id="endflat" value="0"/>
+    </p>	
+	
+</fieldset>
+
+<br>
+
+<input type="submit" value="Compute Damage" onclick="computedamage();">
+
+
+<h2>The 12-ki attack is: <span id="output2"> ?</span> </h2>
+<h2>The total attack of the character when performing a Super Attack is: <span id="output1">?</span></h1> 
+ </body>
