@@ -1,6 +1,7 @@
 <html>
  <head>
 <title>Dokkan Battle Damage Calculator</title>
+<script src="script.js"></script>
  </head>
  <body>
 <h1>Dokkan Battle Damage Calculator</h1>
