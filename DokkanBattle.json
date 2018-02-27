@@ -1,0 +1,70 @@
+{
+	"version": 1.0,
+	"title": "Dokkan Battle",
+	"stuff": {
+		"initialStats": {
+			"friendlyName": "INITIAL STATS",
+			"data": {
+				"baseAttack": {
+					"description": "Enter the base attack of the unit",
+					"value":5
+				},
+				"potentialSystemIncrease": {
+					"description": "Enter the attack stat increase from the potential system",
+					"value":null
+				},
+				"superAttackBoostFromSkillPotentialSystem": {
+					"description": "Enter the 'Super Attack Boost' skill level from the potential system",
+					"value":null
+				}
+			}
+		},
+		"leaderSkill": {
+			"friendlyName": "LEADER SKILL BOOST",
+			"data": {
+				"leaderAttackBoost": {
+					"description": "Enter the attack boost from the first leader",
+					"value":null
+				},
+				"leader2AttachBoost": {
+					"description": "Enter the attack boost from the second leader",
+					"value":null
+				}
+			}
+		},
+		"superAttackStats": {
+			"friendlyName": "SUPER ATTACK STATS",
+			"data": {
+				"12kiAttackBonus": {
+					"description": "Enter the 12-ki attack bonus",
+					"value":null
+				},
+				"attachBonusDueToSuperAttackLevel": {
+					"description": "Common Super Attack 10 bonuses",
+					"value":null
+				}
+			}
+		},
+		"passivesBoosts": {
+			"friendlyName": "PASSIVE-BASED BOOSTS (start of turn)",
+			"data": {
+				"percentageBasedIncrease": {
+					"description": "",
+					"value":null
+				},
+				"flatIncrease": {
+					"description": "",
+					"value":null
+				},
+				"allyPassiveBoostPercentageBased": {
+					"description": "",
+					"value":null
+				},
+				"flatIncrease": {
+					"description": "",
+					"value":null
+				}
+			}
+		}
+	}
+}
