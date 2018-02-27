@@ -32,7 +32,7 @@ h1{
     font-family: 'Pacifico', initial;
     font-size: 2em;
     margin: opx;
-    color: #8082A0;
+    color: white;
     background-color: #2B2C33 ;
     font-weight: 700;
 }
@@ -43,7 +43,7 @@ form{
 }
 
 h2{
-    color: #808282;
+    color: white;
     border: 3px solid grey;
     padding: 10px;
     background-color: #474954;
