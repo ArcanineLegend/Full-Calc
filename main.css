@@ -2,13 +2,58 @@
   display: grid;
   grid-template-columns: auto auto auto auto;
 }
-fieldset {
-  display: block;
-  margin-left: 1px;
-  margin-righjt: 1px;
-  padding-top: 0.35em;
-  padding-bottom: 0.600em;
-  padding-left: 0.75em;
-  padding-right: 0.75em;
-  border: 1px groove (1);
+
+button{
+    color: #4A225C;
+    background-color: #8082A0;
+}
+
+form{
+    color: purple;
+}
+
+html{
+    font-family: "Ariel", "Helvetica", sans-serif;
+    border: 4px solid grey;
+    
+    margin: auto;
+    width: 50%;
+    border: 7px solid grey;
+    padding: 10px;
+    
+    text-align: center;
+    border: 10px solid grey;
+    
+    position: relative;
+    background-blend-mode: color-burn;
+}
+
+h1{
+    font-family: 'Pacifico', initial;
+    font-size: 2em;
+    margin: opx;
+    color: #8082A0;
+    background-color: #2B2C33 ;
+    font-weight: 700;
+}
+
+form{
+    color:aliceblue;
+    
+}
+
+h2{
+    color: #808282;
+    border: 3px solid grey;
+    padding: 10px;
+    background-color: #474954;
+}
+
+form{
+    background-color: #7C7F94;
+}
+
+body {
+    background-color: #414242;
+   
 }
