@@ -22,11 +22,11 @@
 		"leaderSkill": {
 			"friendlyName": "LEADER SKILL BOOST",
 			"data": {
-				"leaderAttackBoost": {
+				"leader1": {
 					"description": "Enter the attack boost from the first leader",
 					"value":120
 				},
-				"leader2AttachBoost": {
+				"leader2": {
 					"description": "Enter the attack boost from the second leader",
 					"value":120
 				}
@@ -35,11 +35,11 @@
 		"superAttackStats": {
 			"friendlyName": "SUPER ATTACK STATS",
 			"data": {
-				"12kiAttackBonus": {
+				"fullKI": {
 					"description": "Enter the 12-ki attack bonus",
 					"value":140
 				},
-				"attachBonusDueToSuperAttackLevel": {
+				"saAtk": {
 					"description": "Common Super Attack 10 bonuses",
 					"value":430
 				}
@@ -48,19 +48,19 @@
 		"passivesBoosts": {
 			"friendlyName": "PASSIVE-BASED BOOSTS (start of turn)",
 			"data": {
-				"percentageBasedIncrease": {
+				"startPerc": {
 					"description": "Percentage-Based Increase",
 					"value":0
 				},
-				"flatIncrease": {
+				"startFlat": {
 					"description": "Flat Increase",
 					"value":0
 				},
-				"allyPassiveBoostPercentageBased": {
+				"fStartPerc": {
 					"description": "Ally Boost Percentage-Based Increase",
 					"value":0
 				},
-				"allyFlatIncrease": {
+				"fStartFlat": {
 					"description": "Ally Boost Flat Increase",
 					"value":0
 				}
@@ -69,11 +69,11 @@
 		"linkSkillBoosts": {
 			"friendlyName": "LINK Skill BOOSTS (start of turn)",
 			"data": {
-				"percentageBasedIncrease": {
+				"linkPerc": {
 					"description": "Percentage-Based Increase",
 					"value":0
 				},
-				"flatIncrease": {
+				"linkFlat": {
 					"description": "Flat Increase",
 					"value":0
 				}
@@ -82,19 +82,19 @@
 		"attackIncreasesWhenSupering": {
 			"friendlyName": "Attack Increases When Supering",
 			"data": {
-				"percentageBasedIncrease": {
+				"endPerc": {
 					"description": "Percentage-Based Increase",
 					"value":0
 				},
-				"flatIncrease": {
+				"endFlat": {
 					"description": "Flat Increase",
 					"value":0
 				},
-				"saBoostpercentageBasedIncrease": {
+				"saAtkBoost": {
 					"description": "Percentage-Based Increase",
 					"value":0
 				},
-				"saBoostflatIncrease": {
+				"saAtkBoostFlat": {
 					"description": "Flat Increase",
 					"value":0
 				}
