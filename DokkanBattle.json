@@ -7,7 +7,7 @@
 			"data": {
 				"baseAttack": {
 					"description": "Enter the base attack of the unit",
-					"value":9000
+					"value":9001
 				},
 				"potentialSystemIncrease": {
 					"description": "Enter the attack stat increase from the potential system",
@@ -60,11 +60,44 @@
 					"description": "Ally Boost Percentage-Based Increase",
 					"value":null
 				},
-				"flatIncrease": {
+				"allyFlatIncrease": {
 					"description": "Ally Boost Flat Increase",
+					"value":null
+				}
+			}
+		},
+		"linkSkillBoosts": {
+			"friendlyName": "LINK Skill BOOSTS (start of turn)",
+			"data": {
+				"percentageBasedIncrease": {
+					"description": "Percentage-Based Increase",
+					"value":null
+				},
+				"flatIncrease": {
+					"description": "Flat Increase",
+					"value":null
+				}
+			}
+		},
+		"attackIncreasesWhenSupering": {
+			"friendlyName": "Attack Increases When Supering",
+			"data": {
+				"percentageBasedIncrease": {
+					"description": "Percentage-Based Increase",
+					"value":null
+				},
+				"flatIncrease": {
+					"description": "Flat Increase",
+					"value":null
+				},
+				"saBoostpercentageBasedIncrease": {
+					"description": "Percentage-Based Increase",
+					"value":null
+				},
+				"saBoostflatIncrease": {
+					"description": "Flat Increase",
 					"value":null
 				}
 			}
 		}
 	}
-}
