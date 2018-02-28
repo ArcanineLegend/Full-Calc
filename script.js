@@ -232,7 +232,7 @@ function computedamage() {
 		var fullKIAtk = Math.ceil(fullKI*(linkedAtk + endFlat));
 		var fullKIAtk2 = Math.floor(fullKIAtk*(1+saAtkBoost) + saAtkBoostFlat);
 		var superBoost = saAtk + 0.05*saBoost + endPerc;
-		var totalDamage = Math.floor(fullkiatk2*superBoost);
+		var totalDamage = Math.floor(fullKIAtk2*superBoost);
 
         //Display the result
         document.getElementById("output1").innerText = totalDamage;
