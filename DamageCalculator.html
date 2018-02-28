@@ -1,0 +1,70 @@
+<html>
+<head>
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<meta http-equiv="Cache-control" content="NO-CACHE">
+<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<style>
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}
+article {
+    margin-left: 170px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+</style>
+
+<script language="JavaScript">
+var s=document.getElementsByTagName('script')[0];
+var sc=document.createElement('script');
+sc.type='text/javascript';
+sc.async=false;
+sc.src='script.js?v' + Math.random(); 
+s.parentNode.insertBefore(sc,s);
+</script>
+
+<script language="JavaScript">
+var s=document.getElementsByTagName('script')[0];
+var sc=document.createElement('script');
+sc.type='text/javascript';
+sc.async=false;
+sc.src='damagecalc.js?v' + Math.random(); 
+s.parentNode.insertBefore(sc,s);
+</script>
+	 
+</head>
+<body>
+ 
+<div class="container">
+	<header>
+		<div class="pageTitle">
+		</div>
+	</header>
+	<!--
+<p> <i>This calculator contains all the necessary equations for damage calculation in dokkan battle. 
+	Go to https://dbz.space/cards/ for specific 12 ki multipliers and other useful information about specific cards.
+	OR Click Here</i>
+	<a target="_blank" href="https://dbz.space/cards/"><button>Dokkan Card List</button></a>
+</p>
+	 -->
+	<div class="statGroups">
+          
+	</div>
+	<input type="submit" value="Calculate Damage" onclick="computedamage();">
+
+	<h2>The 12-ki attack is: <span id="output2"> ?</span> </h2>
+	<h2>The total attack of the character when performing a Super Attack is: <span id="output1">?</span></h2>
+</div>
+</body>
+</html>
