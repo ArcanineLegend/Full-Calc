@@ -228,7 +228,7 @@ function computedamage() {
         var combinedAtk = baseAtk + potBoost;
 		var leaderAtk = Math.floor(combinedAtk*(1 + leader1 + leader2));
 		var atkWithPass = Math.floor(startFlat + fStartFlat + leaderAtk*(1 + startPerc + fStartPerc));
-		var linkedAtk = Math.floor(atkwithpass*(1+linkPerc) + linkFlat);
+		var linkedAtk = Math.floor(atkWithPass*(1+linkPerc) + linkFlat);
 		var fullKIAtk = Math.ceil(fullKI*(linkedAtk + endFlat));
 		var fullKIAtk2 = Math.floor(fullKIAtk*(1+saAtkBoost) + saAtkBoostFlat);
 		var superBoost = saAtk + 0.05*saBoost + endPerc;
