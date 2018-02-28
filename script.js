@@ -201,40 +201,40 @@ function drop(ev) {
 
 function computedamage() {
         //Gets user input
-        var baseatk = Number(document.getElementById("baseatk").value);
-        var potboost = Number(document.getElementById("potboost").value);
-		var spboost = Number(document.getElementById("spboost").value);
+        var baseAtk = Number(document.getElementById("baseAtk").value);
+        var potBoost = Number(document.getElementById("potBoost").value);
+		var saBoost = Number(document.getElementById("saBoost").value);
 	
         var leader1 = Number(document.getElementById("leader1").value)/100;
 		var leader2 = Number(document.getElementById("leader2").value)/100;
 	
-        var fullki = Number(document.getElementById("fullki").value)/100;
-		var spatk = Number(document.getElementById("spatk").value)/100;
+        var fullKI = Number(document.getElementById("fullKI").value)/100;
+		var saAtk = Number(document.getElementById("saAtk").value)/100;
 	
-        var startperc = Number(document.getElementById("startperc").value)/100;
-		var startflat = Number(document.getElementById("startflat").value);
+        var startPerc = Number(document.getElementById("startPerc").value)/100;
+		var startFlat = Number(document.getElementById("startFlat").value);
 	
-        var fstartperc = Number(document.getElementById("fstartperc").value)/100;
-		var fstartflat = Number(document.getElementById("fstartflat").value);
+        var fStartPerc = Number(document.getElementById("fStartPerc").value)/100;
+		var fStartFlat = Number(document.getElementById("fStartFlat").value);
 	
-        var linkperc = Number(document.getElementById("linkperc").value)/100;
-		var linkflat = Number(document.getElementById("linkflat").value);
-		var endperc = Number(document.getElementById("endperc").value)/100;
-		var endflat = Number(document.getElementById("endflat").value);
-		var spatkboost = Number(document.getElementById("spatkboost").value)/100;
-		var spatkboostflat = Number(document.getElementById("spatkboostflat").value);
+        var linkPerc = Number(document.getElementById("linkPerc").value)/100;
+		var linkFlat = Number(document.getElementById("linkFlat").value);
+		var endPerc = Number(document.getElementById("endPerc").value)/100;
+		var endFlat = Number(document.getElementById("endFlat").value);
+		var saAtkBoost = Number(document.getElementById("saAtkBoost").value)/100;
+		var saAtkBoostFlat = Number(document.getElementById("saAtkBoostFlat").value);
 		
         //Equations required to calculate damage
-        var combinedatk = baseatk + potboost;
-		var leaderatk = Math.floor(combinedatk*(1 + leader1 + leader2));
-		var atkwithpass = Math.floor(startflat + fstartflat + leaderatk*(1 + startperc + fstartperc));
-		var linkedatk = Math.floor(atkwithpass*(1+linkperc) + linkflat);
-		var fullkiatk = Math.ceil(fullki*(linkedatk + endflat));
-		var fullkiatk2 = Math.floor(fullkiatk*(1+spatkboost) + spatkboostflat);
-		var superboost = spatk + 0.05*spboost + endperc;
-		var totaldamage = Math.floor(fullkiatk2*superboost);
+        var combinedAtk = baseAtk + potBoost;
+		var leaderAtk = Math.floor(combinedAtk*(1 + leader1 + leader2));
+		var atkWithPass = Math.floor(startFlat + fStartFlat + leaderAtk*(1 + startPerc + fStartPerc));
+		var linkedAtk = Math.floor(atkwithpass*(1+linkPerc) + linkFlat);
+		var fullKIAtk = Math.ceil(fullKI*(linkedAtk + endFlat));
+		var fullKIAtk2 = Math.floor(fullKIAtk*(1+saAtkBoost) + saAtkBoostFlat);
+		var superBoost = saAtk + 0.05*saBoost + endPerc;
+		var totalDamage = Math.floor(fullkiatk2*superBoost);
 
         //Display the result
-        document.getElementById("output1").innerText = totaldamage;
-	document.getElementById("output2").innerText = fullkiatk;
+        document.getElementById("output1").innerText = totalDamage;
+	document.getElementById("output2").innerText = fullKIAtk;
     }
