@@ -9,11 +9,11 @@
 					"description": "Enter the base attack of the unit",
 					"value":9001
 				},
-				"potentialSystemIncrease": {
+				"potBoost": {
 					"description": "Enter the attack stat increase from the potential system",
 					"value":0
 				},
-				"superAttackBoostFromSkillPotentialSystem": {
+				"saBoost": {
 					"description": "Enter the 'Super Attack Boost' skill level from the potential system",
 					"value":0
 				}
