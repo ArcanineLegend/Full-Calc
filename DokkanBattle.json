@@ -37,7 +37,7 @@
 			"data": {
 				"12kiAttackBonus": {
 					"description": "Enter the 12-ki attack bonus",
-					"value":null
+					"value":140
 				},
 				"attachBonusDueToSuperAttackLevel": {
 					"description": "Common Super Attack 10 bonuses",
