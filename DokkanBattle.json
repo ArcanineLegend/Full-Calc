@@ -5,7 +5,7 @@
 		"initialStats": {
 			"friendlyName": "INITIAL STATS",
 			"data": {
-				"baseAttack": {
+				"baseAtk": {
 					"description": "Enter the base attack of the unit",
 					"value":9001
 				},
