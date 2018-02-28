@@ -7,7 +7,7 @@
 			"data": {
 				"baseAttack": {
 					"description": "Enter the base attack of the unit",
-					"value":5
+					"value":9000
 				},
 				"potentialSystemIncrease": {
 					"description": "Enter the attack stat increase from the potential system",
@@ -24,11 +24,11 @@
 			"data": {
 				"leaderAttackBoost": {
 					"description": "Enter the attack boost from the first leader",
-					"value":null
+					"value":120
 				},
 				"leader2AttachBoost": {
 					"description": "Enter the attack boost from the second leader",
-					"value":null
+					"value":120
 				}
 			}
 		},
@@ -41,7 +41,7 @@
 				},
 				"attachBonusDueToSuperAttackLevel": {
 					"description": "Common Super Attack 10 bonuses",
-					"value":null
+					"value":430
 				}
 			}
 		},
@@ -49,19 +49,19 @@
 			"friendlyName": "PASSIVE-BASED BOOSTS (start of turn)",
 			"data": {
 				"percentageBasedIncrease": {
-					"description": "",
+					"description": "Percentage-Based Increase",
 					"value":null
 				},
 				"flatIncrease": {
-					"description": "",
+					"description": "Flat Increase",
 					"value":null
 				},
 				"allyPassiveBoostPercentageBased": {
-					"description": "",
+					"description": "Ally Boost Percentage-Based Increase",
 					"value":null
 				},
 				"flatIncrease": {
-					"description": "",
+					"description": "Ally Boost Flat Increase",
 					"value":null
 				}
 			}
