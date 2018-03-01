@@ -11,22 +11,22 @@
 <script>
 
 
-//This function allows us to connect to our database.
+This function allows us to connect to our database.
 AWS.config.update({
-    region: "us-west-2",
+    region: "us-east-2",
     endpoint: 'dynamodb.us-west-2.amazonaws.com',
     // accessKeyId default can be used while using the downloadable version of DynamoDB. 
     // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
-    accessKeyId: "XXXXXXXXXXXXXXX",
+    accessKeyId: "AKIAI33SILDEVFF56IGQ",
     // secretAccessKey default can be used while using the downloadable version of DynamoDB. 
     // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
-    secretAccessKey: "XXXXXXXXXxxxxxxxxxxXXXXXXXXXXXXXXX"
+    secretAccessKey: "wKHQPQExWj1/At/7SHnYkmsepYyBoUujOF0FcR7S"
   });
   
 
   var dynamodb = new AWS.DynamoDB();
 
-/*
+
 //Creates the event table in our dynamoDB database. 
 function createEventTable(){
 
