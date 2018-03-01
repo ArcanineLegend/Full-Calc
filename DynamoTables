@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="" />
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script>
+</head>
+<script>
+
+
+//This function allows us to connect to our database.
+AWS.config.update({
+    region: "us-west-2",
+    endpoint: 'dynamodb.us-west-2.amazonaws.com',
+    // accessKeyId default can be used while using the downloadable version of DynamoDB. 
+    // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
+    accessKeyId: "XXXXXXXXXXXXXXX",
+    // secretAccessKey default can be used while using the downloadable version of DynamoDB. 
+    // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
+    secretAccessKey: "XXXXXXXXXxxxxxxxxxxXXXXXXXXXXXXXXX"
+  });
+  
+
+  var dynamodb = new AWS.DynamoDB();
+
+/*
+//Creates the event table in our dynamoDB database. 
+function createEventTable(){
+
+var params = {
+    TableName : "Events",
+    //Gives the table a schema
+    KeySchema: [
+        { AttributeName: "eventnumber", KeyType: "HASH"},
+    ],
+    //Setting the attributes of the table.
+    AttributeDefinitions: [
+        { AttributeName: "eventnumber", AttributeType: "N" }
+    ],
+    //How many times it reads and writes. KEEP THIS AT 5 SO WE DON'T GO OVER OUR FREE LIMIT.
+    ProvisionedThroughput: {
+        ReadCapacityUnits: 5,
+        WriteCapacityUnits: 5
+    }
+};
+//Tells you if it even worked.
+dynamodb.createTable(params, function(err, data) {
+    if (err) {
+        document.getElementById('textarea').innerHTML = "Unable to create table: " + "\n" + JSON.stringify(err, undefined, 2);
+    } else {
+        document.getElementById('textarea').innerHTML = "Created table: " + "\n" + JSON.stringify(data, undefined, 2);
+    }
+});
+}
+*/
+
+function gettingAllEventsInDB(){
+	var params = {
+		TableName: "Events"
+	}
+	
+	dynamodb.scan(params, function(err, data) {
+		if (err) {
+			document.getElementById('textarea').innerHTML = "Unable to get table: " + "\n" + JSON.stringify(err, undefined, 2);
+		} else {
+			document.getElementById('textarea').innerHTML = "Created table: " + "\n" + JSON.stringify(data, undefined, 2);
+		}
+	});
+}
+
+function createEventInDB(){
+	var params = {
+		TableName: "Events",
+		Item:{
+			"eventnumber": {
+				"N": "1002"
+			},
+			"eventname": {
+				"S": "Cure for Cancer Event"
+			},
+			"difficulty":{
+				"N": "9"
+			},
+			"description":{
+				"S": "We are going to cure cancer on this hike. Not."
+			},
+		}
+	};
+		
+	dynamodb.putItem(params, function(err, data) {
+		if (err) {
+			document.getElementById('textarea').innerHTML = "Unable to put item: " + "\n" + JSON.stringify(err, undefined, 2);
+		} else {
+			document.getElementById('textarea').innerHTML = "Created table: " + "\n" + JSON.stringify(data, undefined, 2);
+		}
+	});
+}
+
+function updateEventInDB(){
+	var params = {
+		TableName: "Events",
+		Key: {
+			"eventnumber": 1000
+		},
+		UpdateExpression: "set eventname = :name",
+		ExpressionAttributeValues:{
+			":name":"Jons Event"
+		}
+	}
+	
+	dynamodb.updateItem(params, function(err, data) {
+		if (err) {
+			document.getElementById('textarea').innerHTML = "Unable to update item: " + "\n" + JSON.stringify(err, undefined, 2);
+		} else {
+			document.getElementById('textarea').innerHTML = "Created table: " + "\n" + JSON.stringify(data, undefined, 2);
+		}
+	});
+}
+
+
+</script>
+<body>
+    <button id="GetEvents" onclick="gettingAllEventsInDB()">Get Events</button>
+	<button id="CreateEvent" onclick="createEventInDB()">Create Event</button>
+	
+	<button id="CreateEvent" onclick="updateEventInDB()">Update Event</button>
+<br><br>
+<textarea readonly id= "textarea" style="width:400px; height:800px"></textarea>
+
+</body>
+</html> 
