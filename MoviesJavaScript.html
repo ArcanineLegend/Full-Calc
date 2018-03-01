@@ -4,15 +4,15 @@
 
 <script type="text/javascript">
 AWS.config.update({
-  region: "us-west-2",
+  region: "us-east-2",
   // The endpoint should point to the local or remote computer where DynamoDB (downloadable) is running.
   endpoint: 'http://localhost:8000',
   /*
     accessKeyId and secretAccessKey defaults can be used while using the downloadable version of DynamoDB. 
     For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
   */
-  accessKeyId: "fakeMyKeyId",
-  secretAccessKey: "fakeSecretAccessKey"
+  accessKeyId: "AKIAI33SILDEVFF56IGQ",
+  secretAccessKey: "wKHQPQExWj1/At/7SHnYkmsepYyBoUujOF0FcR7S"
 });
 
   /* 
@@ -30,12 +30,12 @@ RoleArn: "arn:aws:iam::123456789012:role/dynamocognito"
 
 var dynamodb = new AWS.DynamoDB();
 var docClient = new AWS.DynamoDB.DocumentClient();
-function createMovies() {
+function createTemplates() {
     var params = {
-        TableName : "Movies",
+        TableName : "TemplateDB",
         KeySchema: [
-            { AttributeName: "year", KeyType: "HASH"},
-            { AttributeName: "title", KeyType: "RANGE" }
+            { AttributeName: "NotAUsername", KeyType: "STRING"},
+            { AttributeName: "TestTitle", KeyType: "STRING" }
         ],
         AttributeDefinitions: [       
             { AttributeName: "year", AttributeType: "N" },
@@ -58,7 +58,7 @@ function createMovies() {
 
 function deleteMovies() {
     var params = {
-        TableName : "Movies"
+        TableName : "TemplateDB"
     };
 
     dynamodb.deleteTable(params, function(err, data) {
@@ -302,7 +302,7 @@ function processFile(evt) {
     <td>
         <table border = 1>
         <caption>Table Operations</caption>
-        <td><input id="createTableButton" type="button" value="Create Table" onclick="createMovies();" /></td><td><input id="deleteTableButton" type="button" value="Delete Table" onclick="deleteMovies();" /></td><td><input id="listTablebutton" type="button" value="List Tables" onclick="listMovies();" /></td>
+        <td><input id="createTableButton" type="button" value="Create Table" onclick="createTemplates();" /></td><td><input id="deleteTableButton" type="button" value="Delete Table" onclick="deleteMovies();" /></td><td><input id="listTablebutton" type="button" value="List Tables" onclick="listMovies();" /></td>
         </table>
     </td>
     <td>
@@ -333,3 +333,4 @@ function processFile(evt) {
 </script>
 </body>
 </html>
+
