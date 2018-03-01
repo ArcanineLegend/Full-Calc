@@ -65,9 +65,9 @@ function logout(){
     console.log('End of logout function');
 };
 
-function showSignInView(){
+function showLibrary(){
 	console.log("executing showSignInView()...");
-	
+	window.location.href = "DamageCalculator.html";
     console.log('End of showSignInView() function');
 }
 
