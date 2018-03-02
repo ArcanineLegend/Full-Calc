@@ -1,28 +1,29 @@
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
+#signin-button{
+    font-size: 15px;
+    color: white;
+    height: 30px;
+    background-color: #5E5D5A;
+}
+#signin-button{
+    position: Centered;
 }
 
+#signin-button:hover {
+    background-color: #ffff99;
+    color: black;
+}
+
+/*All buttons but 'Sign In'*/ 
 button{
-    width: 150px;
-    height: 50px;
-    font-size: 22px;
-    font-family: 'Pacifico';
-    overflow: visible;
-    border-radius: 3px;
-    position: relative;
-    padding-right: grey;
-    border: 2px solid Black; 
-    color: grey;
-    display: inline-block;
-    
+    font-size: 15px;
     color: white;
-    background-color: #8082A0;
+    height: 30px;
+    background-color: #5E5D5A;
 }
 
 button:hover {
-    background-color: black;
-    color: white;
+    background-color: #ccff99;
+    color: black;
 }
 
 form{
@@ -38,7 +39,7 @@ html{
     border: 7px solid grey;
     padding: 10px;
     
-    text-align: center;
+    text-align: center;d
     border: 10px solid grey;
     
     position: relative;
