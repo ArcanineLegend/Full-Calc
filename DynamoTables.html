@@ -13,8 +13,8 @@
 
 //This function allows us to connect to our database.
 AWS.config.update({
-    region: "us-west-2",
-    endpoint: 'dynamodb.us-west-2.amazonaws.com',
+    region: "us-east-2",
+    endpoint: 'dynamodb.us-east-2.amazonaws.com',
     // accessKeyId default can be used while using the downloadable version of DynamoDB. 
     // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
     accessKeyId: "AKIAI33SILDEVFF56IGQ",
@@ -22,7 +22,10 @@ AWS.config.update({
     // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
     secretAccessKey: "wKHQPQExWj1/At/7SHnYkmsepYyBoUujOF0FcR7S"
   });
-  
+	//AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+	//IdentityPoolId: "us-west-2:12345678-1ab2-123a-1234-a12345ab12",
+	//RoleArn: "arn:aws:iam::379748005922:role/aws-service-role/dynamodb.application-autoscaling.amazonaws.com/AWSServiceRoleForApplicationAutoScaling_DynamoDBTable"
+	//});
 
   var dynamodb = new AWS.DynamoDB();
 
@@ -31,14 +34,16 @@ AWS.config.update({
 function createEventTable(){
 
 var params = {
-    TableName : "Events",
+    TableName : "Test",
     //Gives the table a schema
     KeySchema: [
-        { AttributeName: "eventnumber", KeyType: "HASH"},
+        { AttributeName: "eventnumber", 
+	  KeyType: "HASH"},
     ],
     //Setting the attributes of the table.
     AttributeDefinitions: [
-        { AttributeName: "eventnumber", AttributeType: "N" }
+        { AttributeName: "eventnumber", 
+	  AttributeType: "N" }
     ],
     //How many times it reads and writes. KEEP THIS AT 5 SO WE DON'T GO OVER OUR FREE LIMIT.
     ProvisionedThroughput: {
@@ -49,9 +54,9 @@ var params = {
 //Tells you if it even worked.
 dynamodb.createTable(params, function(err, data) {
     if (err) {
-        document.getElementById('textarea').innerHTML = "Unable to create table: " + "\n" + JSON.stringify(err, undefined, 2);
+        document.getElementById('templatename').innerHTML = "Unable to create table: " + "\n" + JSON.stringify(err, undefined, 2);
     } else {
-        document.getElementById('textarea').innerHTML = "Created table: " + "\n" + JSON.stringify(data, undefined, 2);
+        document.getElementById('templatename').innerHTML = "Created table: " + "\n" + JSON.stringify(data, undefined, 2);
     }
 });
 }
@@ -59,7 +64,7 @@ dynamodb.createTable(params, function(err, data) {
 
 function gettingAllEventsInDB(){
 	var params = {
-		TableName: "Events"
+		TableName: "testEvents"
 	}
 	
 	dynamodb.scan(params, function(err, data) {
@@ -73,7 +78,7 @@ function gettingAllEventsInDB(){
 
 function createEventInDB(){
 	var params = {
-		TableName: "Events",
+		TableName: "testEvents",
 		Item:{
 			"eventnumber": {
 				"N": "1002"
