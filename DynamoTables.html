@@ -64,7 +64,7 @@ dynamodb.createTable(params, function(err, data) {
 
 function gettingAllEventsInDB(){
 	var params = {
-		TableName: "testEvents"
+		TableName: "TestTable"
 	}
 	
 	dynamodb.scan(params, function(err, data) {
@@ -76,12 +76,12 @@ function gettingAllEventsInDB(){
 	});
 }
 
-function createEventInDB(){
+function createItemInDB(){
 	var params = {
-		TableName: "testEvents",
+		TableName: "TestTable",
 		Item:{
-			"eventnumber": {
-				"N": "1002"
+			"Username": {
+				"N": "
 			},
 			"eventname": {
 				"S": "Cure for Cancer Event"
@@ -106,7 +106,7 @@ function createEventInDB(){
 
 function updateEventInDB(){
 	var params = {
-		TableName: "Events",
+		TableName: "TestTable",
 		Key: {
 			"eventnumber": 1000
 		},
