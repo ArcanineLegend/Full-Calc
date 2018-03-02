@@ -13,8 +13,8 @@
 
 //This function allows us to connect to our database.
 AWS.config.update({
-    region: "us-east-2",
-    endpoint: 'dynamodb.us-east-2.amazonaws.com',
+    region: "us-east-1",
+    endpoint: 'dynamodb.us-east-1.amazonaws.com',
     // accessKeyId default can be used while using the downloadable version of DynamoDB. 
     // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
     accessKeyId: "AKIAI33SILDEVFF56IGQ",
@@ -34,7 +34,7 @@ AWS.config.update({
 function createEventTable(){
 
 var params = {
-    TableName : "Test",
+    TableName : "TestTable",
     //Gives the table a schema
     KeySchema: [
         { AttributeName: "eventnumber", 
@@ -54,9 +54,9 @@ var params = {
 //Tells you if it even worked.
 dynamodb.createTable(params, function(err, data) {
     if (err) {
-        document.getElementById('templatename').innerHTML = "Unable to create table: " + "\n" + JSON.stringify(err, undefined, 2);
+        document.getElementById('textarea').innerHTML = "Unable to create table: " + "\n" + JSON.stringify(err, undefined, 2);
     } else {
-        document.getElementById('templatename').innerHTML = "Created table: " + "\n" + JSON.stringify(data, undefined, 2);
+        document.getElementById('textarea').innerHTML = "Created table: " + "\n" + JSON.stringify(data, undefined, 2);
     }
 });
 }
