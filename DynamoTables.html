@@ -34,15 +34,15 @@ AWS.config.update({
 function createEventTable(){
 
 var params = {
-    TableName : "TestTable",
+    TableName : "TemplateTable",
     //Gives the table a schema
     KeySchema: [
-        { AttributeName: "eventnumber", 
-	  KeyType: "HASH"},
+        { AttributeName: "UserName", 
+	  KeyType: "STRING"},
     ],
     //Setting the attributes of the table.
     AttributeDefinitions: [
-        { AttributeName: "eventnumber", 
+        { AttributeName: "TemplateName", 
 	  AttributeType: "N" }
     ],
     //How many times it reads and writes. KEEP THIS AT 5 SO WE DON'T GO OVER OUR FREE LIMIT.
@@ -78,19 +78,16 @@ function gettingAllEventsInDB(){
 
 function createItemInDB(){
 	var params = {
-		TableName: "TestTable",
+		TableName: "TemplateDB",
 		Item:{
 			"Username": {
-				"N": "
+				"N": "ArcanineLegend"
 			},
 			"eventname": {
-				"S": "Cure for Cancer Event"
-			},
-			"difficulty":{
-				"N": "9"
+				"S": "Dokkan Battle Calculator"
 			},
 			"description":{
-				"S": "We are going to cure cancer on this hike. Not."
+				"S": "This is a description"
 			},
 		}
 	};
@@ -99,7 +96,7 @@ function createItemInDB(){
 		if (err) {
 			document.getElementById('textarea').innerHTML = "Unable to put item: " + "\n" + JSON.stringify(err, undefined, 2);
 		} else {
-			document.getElementById('textarea').innerHTML = "Created table: " + "\n" + JSON.stringify(data, undefined, 2);
+			document.getElementById('textarea').innerHTML = "Created Template: " + "\n" + JSON.stringify(data, undefined, 2);
 		}
 	});
 }
