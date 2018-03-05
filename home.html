@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="main.css" type="text/css" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.190.0/aws-sdk.min.js" type="application/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@1.31.0/dist/aws-cognito-sdk.min.js" type="application/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@1.31.0/dist/amazon-cognito-identity.min.js" type="application/javascript"></script>
+</head>
+
+<body>
+    <div id="webBar">
+        <div id="webTitle">
+            <h2 id=title>Totally Accurate Battle Calculator</h2>
+        </div>
+        <div id="webUser">
+            <h4>User <div id="usernameDiv"></div></h4>
+        </div>
+    </div>
+    <div id="menu">
+        <a href="home.html"><button>Home</button></a>
+        <button onclick="showLoggedInView()">Dashboard</button>
+        <a href="builder.html"><button>Builder</button></a>
+        <a href="DynamoTables.html"><button>Dynamo</button></a>
+<!--        <a href="TemplateLibrary.html"><button>Prebuilt Damage Calculators</button></a>-->
+        <button id=logoutbutton onclick="logout()">Logout</button>
+    </div>
+    <h2>Home</h2>
+    <div id="homePage">
+        <div id="prebuiltTemplates">
+            <h2>Prebuilt Templates</h2>
+            <a href="https://arcaninelegend.github.io/Full-Calc/DamageCalculator.html?template=DokkanBattle"><button>Dokkan Calculator</button></a>
+        </div>
+        <div id="userBuiltTemplates">
+            <h2>User Built Templates</h2>
+<!--            input user's favorited calculater-->
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
