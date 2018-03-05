@@ -10,18 +10,36 @@
         </table>
     </head>
     <body>
+        <h2 id=title>Totally Accurate Damage Calculator</h2>
+        <div id="menu">
+            <a href="home.html"><button>Home</button></a>
+            <a id="guestLogIn1" href="dashboard.html"><button>Sign In as Guest</button></a>
+        </div>
+        <div>
+            <div id="signInContainer">
+                <h2>Sign In</h2>
+                <form id="signInForm" action="">
+                        Email:    <input type="text" id="loginEmail"><br>
+                        Username: <input type="text" id="loginUsername"><br>
+                        Password: <input type="text" id="loginPassword"><br>
+                </form>
+<!--                <input type='button' id='signin-button' class='myButton' value='Sign In' />-->
+                 <button onclick="performLogin()">Sign In</button> 
+            </div>
+            <div id="registerContainer">
+                <h2>Create Account</h2>
+                <form id="createAccountForm" action="">
+                Email: <input type="text" id="formEM"><br>
+                Username: <input type="text" id="formUN"><br>
+                Password: <input type="text" id="formPW"><br>
+            </form>
+            <button onclick="createAccount()">Submit</button>
+            </div>
+        </div>
         
-        <h1>Totally Accurate Damage Calculator</h1>
-        <a href="dashboard.html"><button>Sign In as Guest</button></a>
-	<a href="register.html"><button>Register</button></a>
-		<h2>Sign In</h2>
-        <form id="signInForm" action="">
-                Email:    <input type="text" id="loginEmail"><br>
-                Username: <input type="text" id="loginUsername"><br>
-                Password: <input type="text" id="loginPassword"><br>
-        </form>
-<!--         <input type='button' id='signin-button' class='myButton' value='Sign In' /> -->
-		<button onclick="performLogin()">Sign In</button>
+        <div style="text-align:center;">
+            <a id="guestLogIn2" href="dashboard.html"><button>Sign In as Guest</button></a>
+        </div>
     </body>            
 	<script src="script.js"></script>
 </html> 
