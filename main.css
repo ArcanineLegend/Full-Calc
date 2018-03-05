@@ -30,6 +30,7 @@ form{
     color: purple;
 }
 
+/*
 html{
     font-family: "Ariel", "Helvetica", sans-serif;
     border: 4px solid grey;
@@ -45,6 +46,7 @@ html{
     position: relative;
     background-blend-mode: color-burn;
 }
+*/
 
 h1{
     font-family: 'Pacifico', initial;
@@ -64,14 +66,97 @@ h2{
     color: white;
     border: 3px solid grey;
     padding: 10px;
-    background-color: #474954;
+    background-color: none;
+    text-align: center;
 }
 
-form{
+#title{
+    color: white;
+    border: none;
+    padding: 0px;
+    text-align: left;
+}
+
+form {
     background-color: #7C7F94;
 }
 
 body {
     background-color: #414242;
    
+}
+
+#menu {
+    padding: 10px 16px;
+    background: #555;
+    color: #f1f1f1;
+}
+
+#logoutbutton {
+    float: right;
+}
+
+#guestLogIn1{
+    float: right;
+}
+
+#registerButton{
+    float: right;
+}
+
+#signInContainer{
+    margin: auto;
+    width: 40%;
+    display: inline-block;
+    padding: 20px;
+}
+
+#registerContainer{
+    margin: auto;
+    width: 40%;
+    display: inline-block;
+    float: right;
+    padding: 20px;
+}
+
+#yourCalcs{
+    margin: auto;
+    width: 40%;
+    display: inline-block;
+    padding: 20px;
+}
+
+#yourFavorites{
+    margin: auto;
+    width: 40%;
+    display: inline-block;
+    float: right;
+    padding: 20px;
+}
+
+#prebuiltTemplates{
+    margin: auto;
+    width: 45%;
+    display: inline-block;
+    padding: 20px;
+}
+
+#userBuiltTemplates{
+    margin: auto;
+    width: 45%;
+    display: inline-block;
+    float: right;
+    padding: 20px;
+}
+
+#webTitle{
+    display: inline-block;
+    float: left
+    padding: 20px;
+}
+
+#webUser{
+    display: inline-block;
+    float: right;
+    padding-right: 30px;
 }
