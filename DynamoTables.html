@@ -34,7 +34,7 @@ AWS.config.update({
 function createTemplateTable(){
 
 var params = {
-    TableName : "TemplateTable",
+    TableName : "TemplateDB",
     //Gives the table a schema
     KeySchema: [
         { AttributeName: "UserName", 
@@ -64,7 +64,7 @@ dynamodb.createTable(params, function(err, data) {
 
 function gettingAllTemplatesInDB(){
 	var params = {
-		TableName: "TestTable"
+		TableName: "TemplateDB"
 	}
 	
 	dynamodb.scan(params, function(err, data) {
@@ -103,7 +103,7 @@ function createItemInDB(){
 
 function updateTemplateInDB(){
 	var params = {
-		TableName: "TestTable",
+		TableName: "TemplateDB",
 		Key: {
 			"eventnumber": 1000
 		},
