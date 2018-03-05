@@ -42,7 +42,7 @@ var params = {
     ],
     //Setting the attributes of the table.
     AttributeDefinitions: [
-        { AttributeName: "TemplateName", 
+        { AttributeName: "TemplateTitle", 
 	  AttributeType: "N" }
     ],
     //How many times it reads and writes. KEEP THIS AT 5 SO WE DON'T GO OVER OUR FREE LIMIT.
@@ -83,7 +83,7 @@ function createItemInDB(){
 			"Username": {
 				"S": "ArcanineLegend"
 			},
-			"eventname": {
+			"TemplateTitle": {
 				"S": "Dokkan Battle Calculator"
 			},
 			"description":{
