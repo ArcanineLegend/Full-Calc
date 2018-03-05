@@ -69,9 +69,9 @@ function gettingAllTemplatesInDB(){
 	
 	dynamodb.scan(params, function(err, data) {
 		if (err) {
-			document.getElementById('textarea').innerHTML = "Unable to get table: " + "\n" + JSON.stringify(err, undefined, 2);
+			document.getElementById('textarea').innerHTML = "Unable To Get Table: " + "\n" + JSON.stringify(err, undefined, 2);
 		} else {
-			document.getElementById('textarea').innerHTML = "Created table: " + "\n" + JSON.stringify(data, undefined, 2);
+			document.getElementById('textarea').innerHTML = "All Templates Found: " + "\n" + JSON.stringify(data, undefined, 2);
 		}
 	});
 }
@@ -94,7 +94,7 @@ function createItemInDB(){
 		
 	dynamodb.putItem(params, function(err, data) {
 		if (err) {
-			document.getElementById('textarea').innerHTML = "Unable to put item: " + "\n" + JSON.stringify(err, undefined, 2);
+			document.getElementById('textarea').innerHTML = "Unable To Put Template Into DB: " + "\n" + JSON.stringify(err, undefined, 2);
 		} else {
 			document.getElementById('textarea').innerHTML = "Created Template: " + "\n" + JSON.stringify(data, undefined, 2);
 		}
@@ -115,9 +115,9 @@ function updateTemplateInDB(){
 	
 	dynamodb.updateItem(params, function(err, data) {
 		if (err) {
-			document.getElementById('textarea').innerHTML = "Unable to update item: " + "\n" + JSON.stringify(err, undefined, 2);
+			document.getElementById('textarea').innerHTML = "Unable To Update Template: " + "\n" + JSON.stringify(err, undefined, 2);
 		} else {
-			document.getElementById('textarea').innerHTML = "Created table: " + "\n" + JSON.stringify(data, undefined, 2);
+			document.getElementById('textarea').innerHTML = "Updated Template: " + "\n" + JSON.stringify(data, undefined, 2);
 		}
 	});
 }
