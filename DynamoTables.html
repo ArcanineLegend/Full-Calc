@@ -31,7 +31,7 @@ AWS.config.update({
 
 
 //Creates the event table in our dynamoDB database. 
-function createEventTable(){
+function createTemplateTable(){
 
 var params = {
     TableName : "TemplateTable",
@@ -62,7 +62,7 @@ dynamodb.createTable(params, function(err, data) {
 }
 
 
-function gettingAllEventsInDB(){
+function gettingAllTemplatesInDB(){
 	var params = {
 		TableName: "TestTable"
 	}
@@ -101,7 +101,7 @@ function createItemInDB(){
 	});
 }
 
-function updateEventInDB(){
+function updateTemplateInDB(){
 	var params = {
 		TableName: "TestTable",
 		Key: {
@@ -125,10 +125,10 @@ function updateEventInDB(){
 
 </script>
 <body>
-    <button id="GetEvents" onclick="gettingAllEventsInDB()">Get Events</button>
-	<button id="CreateEvent" onclick="createEventInDB()">Create Event</button>
-	<button id="CreateTable" onclick="createEventTable()">Create Event Table</button>
-	<button id="CreateEvent" onclick="updateEventInDB()">Update Event</button>
+    <button id="GetTemplates" onclick="gettingAllTemplatesInDB()">Get Templates</button>
+	<button id="CreateTemplate" onclick="createItemInDB()">Create Template</button>
+	<button id="CreateTemplateTable" onclick="createTemplateTable()">Create Template Table</button>
+	<button id="UpdateTemplate" onclick="updateTemplateInDB()">Update Template</button>
 <br><br>
 <textarea readonly id= "textarea" style="width:400px; height:800px"></textarea>
 
