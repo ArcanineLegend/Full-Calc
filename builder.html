@@ -19,9 +19,22 @@
 </head>
     
 <body>
-    <h2>Welcome</h2>
-    <button onclick="logout()">Logout</button>
-    <button onclick="showLoggedInView()">Dashboard</button>
+    <div id="webBar">
+        <div id="webTitle">
+            <h2 id=title>Totally Accurate Battle Calculator</h2>
+        </div>
+        <div id="webUser">
+            <h4>User <div id="usernameDiv"></div></h4>
+        </div>
+    </div>
+    <div id="menu">
+        <a href="home.html"><button>Home</button></a>
+        <button onclick="showLoggedInView()">Dashboard</button>
+        <a href="builder.html"><button>Builder</button></a>
+        <a href="DynamoTables.html"><button>Dynamo</button></a>
+<!--        <a href="TemplateLibrary.html"><button>Prebuilt Damage Calculators</button></a>-->
+        <button id=logoutbutton onclick="logout()">Logout</button>
+    </div>
     <h2>Builder Tool</h2>
     <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     <button onclick="()">Base Value</button>
