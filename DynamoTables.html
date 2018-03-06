@@ -51,6 +51,7 @@ var params = {
         WriteCapacityUnits: 5
     }
 };
+	
 //Tells you if it even worked.
 dynamodb.createTable(params, function(err, data) {
     if (err) {
@@ -59,7 +60,6 @@ dynamodb.createTable(params, function(err, data) {
         document.getElementById('textarea').innerHTML = "Created table: " + "\n" + JSON.stringify(data, undefined, 2);
     }
 });
-}
 
 
 function gettingAllTemplatesInDB(){
@@ -74,7 +74,6 @@ function gettingAllTemplatesInDB(){
 			document.getElementById('textarea').innerHTML = "All Templates Found: " + "\n" + JSON.stringify(data, undefined, 2);
 		}
 	});
-}
 
 function createItemInDB(){
 	var params = {
@@ -120,7 +119,6 @@ function updateTemplateInDB(){
 			document.getElementById('textarea').innerHTML = "Updated Template: " + "\n" + JSON.stringify(data, undefined, 2);
 		}
 	});
-}
 
 
 </script>
