@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="" />
     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script>
 </head>
+	<script src="serialization.js"></script>
 <script>
 
 
@@ -32,7 +33,6 @@ AWS.config.update({
 
 //Creates the event table in our dynamoDB database. 
 function createTemplateTable(){
-
 var params = {
     TableName : "TemplateDB",
     //Gives the table a schema
@@ -86,108 +86,116 @@ function createItemInDB(){
 			"TemplateTitle": {
 				"S": "Dokkan Battle Calculator"
 			},
-			"Variables": {
-				"M": {
+			"data": {
+				"S": "
+				"version": 1.0,
+	"title": "Dokkan Battle",
+	"stuff": {
 		"initialStats": {
-			"S": "INITIAL STATS",
-			//"M": {
+			"friendlyName": "INITIAL STATS",
+			"data": {
 				"baseAtk": {
-					"S": "Enter the base attack of the unit",
-					"N": "9001"
+					"description": "Enter the base attack of the unit",
+					"value":9001
 				},
 				"potBoost": {
-					"S": "Enter the attack stat increase from the potential system",
-					"N": "0"
+					"description": "Enter the attack stat increase from the potential system",
+					"value":0
 				},
 				"saBoost": {
-					"S": "Enter the 'Super Attack Boost' skill level from the potential system",
-					"N": "0"
+					"description": "Enter the 'Super Attack Boost' skill level from the potential system",
+					"value":0
 				}
-			//}
+			}
 		},
 		"leaderSkill": {
-			"S": "LEADER SKILL BOOST",
-			//"M": {
+			"friendlyName": "LEADER SKILL BOOST",
+			"data": {
 				"leader1": {
-					"S": "Enter the attack boost from the first leader",
-					"N": "120"
+					"description": "Enter the attack boost from the first leader",
+					"value":120
 				},
 				"leader2": {
-					"S": "Enter the attack boost from the second leader",
-					"N": "120"
+					"description": "Enter the attack boost from the second leader",
+					"value":120
 				}
-			//}
+			}
 		},
 		"superAttackStats": {
-			"S": "SUPER ATTACK STATS",
-			//"M": {
+			"friendlyName": "SUPER ATTACK STATS",
+			"data": {
 				"fullKI": {
-					"S": "Enter the 12-ki attack bonus",
-					"N": "140"
+					"description": "Enter the 12-ki attack bonus",
+					"value":140
 				},
 				"saAtk": {
-					"S": "Common Super Attack 10 bonuses",
-					"N": "430"
+					"description": "Common Super Attack 10 bonuses",
+					"value":430
 				}
-			//}
+			}
 		},
 		"passivesBoosts": {
-			"S": "PASSIVE-BASED BOOSTS (start of turn)",
-			//"M": {
+			"friendlyName": "PASSIVE-BASED BOOSTS (start of turn)",
+			"data": {
 				"startPerc": {
-					"S": "Percentage-Based Increase",
-					"N": "0"
+					"description": "Percentage-Based Increase",
+					"value":0
 				},
 				"startFlat": {
-					"S": "Flat Increase",
-					"N": "0"
+					"description": "Flat Increase",
+					"value":0
 				},
 				"fStartPerc": {
-					"S": "Ally Boost Percentage-Based Increase",
-					"N": "0"
+					"description": "Ally Boost Percentage-Based Increase",
+					"value":0
 				},
 				"fStartFlat": {
-					"S": "Ally Boost Flat Increase",
-					"N": "0"
+					"description": "Ally Boost Flat Increase",
+					"value":0
 				}
-			//}
+			}
 		},
 		"linkSkillBoosts": {
-			"S": "LINK Skill BOOSTS (start of turn)",
-			//"M": {
+			"friendlyName": "LINK Skill BOOSTS (start of turn)",
+			"data": {
 				"linkPerc": {
-					"S": "Percentage-Based Increase",
-					"N": "0"
+					"description": "Percentage-Based Increase",
+					"value":0
 				},
 				"linkFlat": {
-					"S": "Flat Increase",
-					"N": "0"
+					"description": "Flat Increase",
+					"value":0
 				}
-			//}
+			}
 		},
 		"attackIncreasesWhenSupering": {
-			"S": "Attack Increases When Supering",
-			//"M": {
+			"friendlyName": "Attack Increases When Supering",
+			"data": {
 				"endPerc": {
-					"S": "Percentage-Based Increase",
-					"N": "0"
+					"description": "Percentage-Based Increase",
+					"value":0
 				},
 				"endFlat": {
-					"S": "Flat Increase",
-					"N": "0"
+					"description": "Flat Increase",
+					"value":0
 				},
 				"saAtkBoost": {
-					"S": "Percentage-Based Increase",
-					"N": "0"
+					"description": "Percentage-Based Increase",
+					"value":0
 				},
 				"saAtkBoostFlat": {
-					"S": "Flat Increase",
-					"N": "0"
+					"description": "Flat Increase",
+					"value":0
 				}
-			//}
+			}
 		}
 	}
-}}};
+}"
+			
+			}
+		}
+	}
+};
 		
 	dynamodb.putItem(params, function(err, data) {
 		if (err) {
