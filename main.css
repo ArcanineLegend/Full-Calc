@@ -1,10 +1,10 @@
-#signin-button{
+#signin-button {
     font-size: 15px;
     color: white;
     height: 30px;
     background-color: #5E5D5A;
 }
-#signin-button{
+#signin-button {
     position: Centered;
 }
 
@@ -14,7 +14,7 @@
 }
 
 /*All buttons but 'Sign In'*/ 
-button{
+button {
     font-size: 15px;
     color: white;
     height: 30px;
@@ -26,12 +26,12 @@ button:hover {
     color: black;
 }
 
-form{
+form {
     color: purple;
 }
 
 /*
-html{
+html {
     font-family: "Ariel", "Helvetica", sans-serif;
     border: 4px solid grey;
     
@@ -48,7 +48,7 @@ html{
 }
 */
 
-h1{
+h1 {
     font-family: 'Pacifico', initial;
     font-size: 2em;
     margin: opx;
@@ -57,12 +57,12 @@ h1{
     font-weight: 700;
 }
 
-form{
+form {
     color:aliceblue;
     
 }
 
-h2{
+h2 {
     color: white;
     border: 3px solid grey;
     padding: 10px;
@@ -70,7 +70,11 @@ h2{
     text-align: center;
 }
 
-#title{
+h3 {
+    color: white;
+}
+
+#title {
     color: white;
     border: none;
     padding: 0px;
@@ -96,37 +100,22 @@ body {
     float: right;
 }
 
-#guestLogIn1{
+#guestLogIn1 {
     float: right;
 }
 
-#registerButton{
+#registerButton {
     float: right;
 }
 
-#signInContainer{
+#signInContainer {
     margin: auto;
     width: 40%;
     display: inline-block;
     padding: 20px;
 }
 
-#registerContainer{
-    margin: auto;
-    width: 40%;
-    display: inline-block;
-    float: right;
-    padding: 20px;
-}
-
-#yourCalcs{
-    margin: auto;
-    width: 40%;
-    display: inline-block;
-    padding: 20px;
-}
-
-#yourFavorites{
+#registerContainer {
     margin: auto;
     width: 40%;
     display: inline-block;
@@ -134,14 +123,29 @@ body {
     padding: 20px;
 }
 
-#prebuiltTemplates{
+#yourCalcs {
+    margin: auto;
+    width: 40%;
+    display: inline-block;
+    padding: 20px;
+}
+
+#yourFavorites {
+    margin: auto;
+    width: 40%;
+    display: inline-block;
+    float: right;
+    padding: 20px;
+}
+
+#prebuiltTemplates {
     margin: auto;
     width: 45%;
     display: inline-block;
     padding: 20px;
 }
 
-#userBuiltTemplates{
+#userBuiltTemplates {
     margin: auto;
     width: 45%;
     display: inline-block;
@@ -149,13 +153,13 @@ body {
     padding: 20px;
 }
 
-#webTitle{
+#webTitle {
     display: inline-block;
     float: left
     padding: 20px;
 }
 
-#webUser{
+#webUser {
     display: inline-block;
     float: right;
     padding-right: 30px;
