@@ -60,7 +60,7 @@ dynamodb.createTable(params, function(err, data) {
         document.getElementById('textarea').innerHTML = "Created table: " + "\n" + JSON.stringify(data, undefined, 2);
     }
 });
-
+}
 
 function gettingAllTemplatesInDB(){
 	var params = {
@@ -74,7 +74,7 @@ function gettingAllTemplatesInDB(){
 			document.getElementById('textarea').innerHTML = "All Templates Found: " + "\n" + JSON.stringify(data, undefined, 2);
 		}
 	});
-
+}
 function createItemInDB(){
 	var params = {
 		TableName: "TemplateDB",
