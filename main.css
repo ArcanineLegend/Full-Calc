@@ -90,6 +90,10 @@ body {
    
 }
 
+#usernameDiv {
+    color: white;  
+}
+
 #menu {
     padding: 10px 16px;
     background: #555;
