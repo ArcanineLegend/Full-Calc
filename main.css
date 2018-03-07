@@ -90,10 +90,6 @@ body {
    
 }
 
-#usernameDiv {
-    color: white;  
-}
-
 #menu {
     padding: 10px 16px;
     background: #555;
@@ -164,6 +160,7 @@ body {
 }
 
 #webUser {
+    color: white;
     display: inline-block;
     float: right;
     padding-right: 30px;
