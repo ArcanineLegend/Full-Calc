@@ -74,6 +74,10 @@ h3 {
     color: white;
 }
 
+h4 {
+    color: white;
+}
+
 #title {
     color: white;
     border: none;
@@ -160,7 +164,6 @@ body {
 }
 
 #webUser {
-    color: white;
     display: inline-block;
     float: right;
     padding-right: 30px;
