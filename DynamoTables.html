@@ -34,7 +34,7 @@ AWS.config.update({
 //Creates the event table in our dynamoDB database. 
 function createTemplateTable(){
 var params = {
-    TableName : "TemplateDB",
+    TableName : "TemplateDB2.0",
     //Gives the table a schema
     KeySchema: [
         { AttributeName: "UserName", KeyType: "STRING"},
@@ -63,7 +63,7 @@ dynamodb.createTable(params, function(err, data) {
 
 function gettingAllTemplatesInDB(){
 	var params = {
-		TableName: "TemplateDB"
+		TableName: "TemplateDB2.0"
 	}
 	
 	dynamodb.scan(params, function(err, data) {
@@ -76,7 +76,7 @@ function gettingAllTemplatesInDB(){
 }
 function createItemInDB(){
 	var params = {
-		TableName: "TemplateDB",
+		TableName: "TemplateDB2.0",
 		Item:{
 			"Username": {
 				"S": "ArcanineLegend"
@@ -101,7 +101,7 @@ function createItemInDB(){
 }
 function updateTemplateInDB(){
 	var params = {
-		TableName: "TemplateDB",
+		TableName: "TemplateDB2.0",
 		Key: {
 			"eventnumber": 1000
 		},
