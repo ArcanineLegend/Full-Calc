@@ -37,13 +37,12 @@ var params = {
     TableName : "TemplateDB",
     //Gives the table a schema
     KeySchema: [
-        { AttributeName: "UserName", 
-	  KeyType: "STRING"},
+        { AttributeName: "UserName", KeyType: "STRING"},
     ],
     //Setting the attributes of the table.
     AttributeDefinitions: [
-        { AttributeName: "TemplateTitle", 
-	  AttributeType: "N" }
+        { AttributeName: "TemplateTitle", AttributeType: "S" }
+	    { AttributeName: "Data", AttributeType: "S"}
     ],
     //How many times it reads and writes. KEEP THIS AT 5 SO WE DON'T GO OVER OUR FREE LIMIT.
     ProvisionedThroughput: {
@@ -85,7 +84,7 @@ function createItemInDB(){
 			"TemplateTitle": {
 				"S": "Dokkan Battle Calculator"
 			},
-			"data": {
+			"Data": {
 				"S": "templateJsonToDynamoStructure(templateJson)"
 			}
 		}
