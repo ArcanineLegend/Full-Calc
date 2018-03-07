@@ -1,0 +1,54 @@
+html{
+    font-family: "Ariel", "Helvetica", sans-serif;
+    
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    
+    position: relative;
+    background-blend-mode: color-burn;
+}
+p{
+    font-family: 'Pacifico', initial;
+    font-size: 20px;
+    margin: opx;
+    color: white;
+    background-color: #2B2C33 ;
+    font-weight: 700;
+}
+
+form{
+    color:aliceblue;
+    
+}
+
+h2{
+    color: white;
+    border: 3px solid grey;
+    padding: 10px;
+    background-color: #474954;
+}
+    
+button{
+    font-size: 15px;
+    color: white;
+    height: 30px;
+    background-color: #5E5D5A;
+}
+
+button:hover {
+    background-color: #ccfff3;
+    color: black;
+}
+
+input{
+     font-size: 15px;
+    color: white;
+    height: 30px;
+    background-color: #5E5D5A;
+}
+
+input:hover {
+    background-color: #ccfff3;
+    color: black;
+}
