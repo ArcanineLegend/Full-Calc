@@ -179,20 +179,7 @@ function createItemInDB(){
 		}
 	}
 };
-	var params = {
-		TableName: "TemplateDB",
-		Item:{
-			"Username": {
-				"S": "ArcanineLegend"
-			},
-			"TemplateTitle": {
-				"S": "Dokkan Battle Calculator"
-			},
-			"Data": {
-				"S": templateJsonToDynamoStructure(templateJson)
-			}
-		}
-	};
+	var params = templateJsonToDynamoStructure(templateJson);
 
 		
 	dynamodb.putItem(params, function(err, data) {
