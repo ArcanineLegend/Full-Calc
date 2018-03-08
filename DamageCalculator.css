@@ -16,6 +16,7 @@ b{
 }
 
 p{
+    min-height: 50;
     font-family: 'Pacifico', initial;
     font-size: 20px;
     margin: 0px;
@@ -49,6 +50,7 @@ button:hover {
 }
 
 input{
+    float: right;
     margin: right;
     text-align: center;
     font-size: 15px;
