@@ -19,5 +19,5 @@ Item:{
 "S": JSON.stringify(templateJson)
 },
 }
-};
+}.toString();
 }
