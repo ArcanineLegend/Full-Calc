@@ -3,7 +3,7 @@ return JSON.parse(dynamo.data);
 }
 
 function templateJsonToDynamoStructure(templateJson){
-return {
+var dynamoJson = {
 TableName: "TemplateDB",
 Item:{
 "Username": {
@@ -19,5 +19,6 @@ Item:{
 "S": JSON.stringify(templateJson)
 },
 }
-}.toString();
+};
+  return dynamoJson;
 }
