@@ -75,8 +75,110 @@ function gettingAllTemplatesInDB(){
 	});
 }
 function createItemInDB(){
-	var templateJson = {""
+	var templateJson = {
+	"version": 1.0,
+	"title": "Dokkan Battle",
+	"stuff": {
+		"initialStats": {
+			"friendlyName": "INITIAL STATS",
+			"data": {
+				"baseAtk": {
+					"description": "Enter the base attack of the unit",
+					"value":9001
+				},
+				"potBoost": {
+					"description": "Enter the attack stat increase from the potential system",
+					"value":0
+				},
+				"saBoost": {
+					"description": "Enter the 'Super Attack Boost' skill level from the potential system",
+					"value":0
+				}
+			}
+		},
+		"leaderSkill": {
+			"friendlyName": "LEADER SKILL BOOST",
+			"data": {
+				"leader1": {
+					"description": "Enter the attack boost from the first leader",
+					"value":120
+				},
+				"leader2": {
+					"description": "Enter the attack boost from the second leader",
+					"value":120
+				}
+			}
+		},
+		"superAttackStats": {
+			"friendlyName": "SUPER ATTACK STATS",
+			"data": {
+				"fullKI": {
+					"description": "Enter the 12-ki attack bonus",
+					"value":140
+				},
+				"saAtk": {
+					"description": "Common Super Attack 10 bonuses",
+					"value":430
+				}
+			}
+		},
+		"passivesBoosts": {
+			"friendlyName": "PASSIVE-BASED BOOSTS (start of turn)",
+			"data": {
+				"startPerc": {
+					"description": "Percentage-Based Increase",
+					"value":0
+				},
+				"startFlat": {
+					"description": "Flat Increase",
+					"value":0
+				},
+				"fStartPerc": {
+					"description": "Ally Boost Percentage-Based Increase",
+					"value":0
+				},
+				"fStartFlat": {
+					"description": "Ally Boost Flat Increase",
+					"value":0
+				}
+			}
+		},
+		"linkSkillBoosts": {
+			"friendlyName": "LINK Skill BOOSTS (start of turn)",
+			"data": {
+				"linkPerc": {
+					"description": "Percentage-Based Increase",
+					"value":0
+				},
+				"linkFlat": {
+					"description": "Flat Increase",
+					"value":0
+				}
+			}
+		},
+		"attackIncreasesWhenSupering": {
+			"friendlyName": "Attack Increases When Supering",
+			"data": {
+				"endPerc": {
+					"description": "Percentage-Based Increase",
+					"value":0
+				},
+				"endFlat": {
+					"description": "Flat Increase",
+					"value":0
+				},
+				"saAtkBoost": {
+					"description": "Percentage-Based Increase",
+					"value":0
+				},
+				"saAtkBoostFlat": {
+					"description": "Flat Increase",
+					"value":0
+				}
+			}
+		}
 	}
+};
 	var params = {
 		TableName: "TemplateDB",
 		Item:{
