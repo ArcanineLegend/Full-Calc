@@ -49,6 +49,7 @@ button:hover {
 }
 
 input{
+    display: inline-flex;
     font-size: 15px;
     color: #F5F0DF;
     height: 30px;
