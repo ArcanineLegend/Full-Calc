@@ -49,9 +49,6 @@ button:hover {
 }
 
 input{
-    position: inherit;
-    top: 0;
-    left: 0;
     margin: right;
     text-align: center;
     font-size: 15px;
