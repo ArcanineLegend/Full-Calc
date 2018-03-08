@@ -49,12 +49,15 @@ button:hover {
 }
 
 input{
+     position: absolute;
+    top: 2;
+    left: 3;
+    
     text-align: center;
     font-size: 15px;
     color: #F5F0DF;
     height: 30px;
     background-color: #5E5D5A;
-    position: inherit;
 }
 
 input:hover {
