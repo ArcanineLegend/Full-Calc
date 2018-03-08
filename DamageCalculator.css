@@ -8,6 +8,11 @@ html{
     position: relative;
 
 }
+
+b{
+color: #33A9AB;
+}
+
 p{
     font-family: 'Pacifico', initial;
     font-size: 20px;
