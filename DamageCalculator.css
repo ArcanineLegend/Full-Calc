@@ -12,7 +12,7 @@ html{
 b{
     font-family: "Garamond", sans-serif;
     color: #3079E8;
-    
+        
 }
 
 p{
@@ -49,12 +49,12 @@ button:hover {
 }
 
 input{
-    display: inline-flex;
+    
     font-size: 15px;
     color: #F5F0DF;
     height: 30px;
     background-color: #5E5D5A;
-    float: center;
+    position: relative;
 }
 
 input:hover {
