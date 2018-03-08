@@ -17,7 +17,7 @@ Item:{
 },
 "data":{
 "S": JSON.stringify(templateJson)
-},
+}
 }
 };
   return dynamoJson;
