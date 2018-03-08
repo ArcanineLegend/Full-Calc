@@ -12,9 +12,9 @@ Item:{
 "TemplateTitle": {
 "S": "Jeff Dokkan"
 },
-"Description":{
-"S": null
-},
+//"Description":{
+//"S": null
+//},
 "Data":{
 "S": JSON.stringify(templateJson)
 }
