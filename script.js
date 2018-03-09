@@ -184,7 +184,7 @@ function determineAdminStatus(session) {
             for (var j in myStyleSheet.cssRules) {
                 var CSSStyleRule = myStyleSheet.cssRules[j];
                 if (CSSStyleRule.selectorText == ".admin") {
-                    CSSStyleRule.cssText = "inline-block";
+                    CSSStyleRule.style.cssText = "inline-block";
                     break;
                 }
             }
