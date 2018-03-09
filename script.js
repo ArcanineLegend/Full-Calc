@@ -91,8 +91,8 @@ function onSignUpResult(err, result){
 		alert(err);
 		return;
 	}
-	console.log('Sign up success: '+JSON.stringify(result));
-	cognitoUser = result.user;
+	console.log('Sign up success: '+JSON.stringify(session));
+	cognitoUser = session.user;
 	console.log('user name is ' + cognitoUser.getUsername());
 	showLoggedInView();
 }
@@ -145,9 +145,9 @@ function performLogin(){
     };
     var cognitoUserToLogin = new AWSCognito.CognitoIdentityServiceProvider.CognitoUser(userData);
     cognitoUserToLogin.authenticateUser(authenticationDetails, {
-        onSuccess: function(result) {
+        onSuccess: function(session) {
             cognitoUser = cognitoUserToLogin;
-            onSuccessfulLogin(result);
+            onSuccessfulLogin(session);
         },
         
         onFailure: function(err) {
@@ -161,9 +161,17 @@ function performLogin(){
     });
 }
 
-function onSuccessfulLogin(result) {
+function onSuccessfulLogin(session) {
 	console.log("You are successfully logged in.");
-    var cognitoGroups = result.accessToken.payload["cognito:groups"];
+    initiateApp(session);
+    
+	//console.log('access token + ' + result.getAccessToken().getJwtToken());
+    /*Use the idToken for Logins Map when Federating User Pools with Cognito Identity or when passing through an Authorization Header to an API Gateway Authorizer*/
+    //console.log('idToken + ' + result.idToken.jwtToken);
+}
+
+function determineAdminStatus(session) {
+    var cognitoGroups = session.accessToken.payload["cognito:groups"];
     for (var group in cognitoGroups) {
         if (group == "Administrators") {
             isAdmin = true;
@@ -182,30 +190,31 @@ function onSuccessfulLogin(result) {
             }
         }
     }
-    showLoggedInView();
-    $("#usernameDiv").html(cognitoUser.getUsername());
-	//console.log('access token + ' + result.getAccessToken().getJwtToken());
-    /*Use the idToken for Logins Map when Federating User Pools with Cognito Identity or when passing through an Authorization Header to an API Gateway Authorizer*/
-    //console.log('idToken + ' + result.idToken.jwtToken);
 }
 
+function initiateApp(session){
+    $("#usernameDiv").html(cognitoUser.getUsername());
+    determineAdminStatus(session);
+    showLoggedInView();
+}
 
-function initiateApp(){
+function checkForSignedInUser() {
     cognitoUser = userPool.getCurrentUser();
     if (cognitoUser == null) {
         console.log("No session found in browser storage");
     } else {
         console.log("A user session was found in browser storage: "+JSON.stringify(cognitoUser));
         cognitoUser.getSession(function(err, session) {
-    if (err) {
-        console.log("Even though user sesssion was found in browser storage, the session is invalid.");
-        return;
-    }
+            if (err) {
+                console.log("Even though user sesssion was found in browser storage, the session is invalid.");
+                return;
+            }
+            initiateApp(session);
         });
     }
 }
 
-initiateApp();
+checkForSignedInUser();
 
 function allowDrop(ev) {
     ev.preventDefault();
