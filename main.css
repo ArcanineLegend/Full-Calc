@@ -74,6 +74,10 @@ h3 {
     color: white;
 }
 
+.admin {
+    display: none;
+}
+
 #webUser {
     color : white;
 }
