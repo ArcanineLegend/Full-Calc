@@ -171,7 +171,16 @@ function onSuccessfulLogin(result) {
         }
     }
     if (isAdmin) {
-        document.getElementById(".admin").style.display = "inline-block"; 
+        for (var i in document.styleSheets) {
+            var myStyleSheet = document.styleSheets[i];
+            for (var j in myStyleSheet.cssRules) {
+                var CSSStyleRule = myStyleSheet.cssRules[j];
+                if (CSSStyleRule.selectorText == ".admin") {
+                    CSSStyleRule.cssText = "";
+                    break;
+                }
+            }
+        }
     }
     showLoggedInView();
     $("#usernameDiv").html(cognitoUser.getUsername());
