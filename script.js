@@ -80,8 +80,8 @@ function showNotLoggedInView(){
 
 function showLoggedInView(){
 	console.log("executing showLoggedInView()...");
-    window.location.href = "dashboard.html";
-    console.log('End of showLoggedInView function');
+	window.location.href = "dashboard.html";
+    	console.log('End of showLoggedInView function');
     
 }
 
@@ -195,7 +195,6 @@ function determineAdminStatus(session) {
 function initiateApp(session){
     $("#usernameDiv").html(cognitoUser.getUsername());
     determineAdminStatus(session);
-    showLoggedInView();
 }
 
 function checkForSignedInUser() {
