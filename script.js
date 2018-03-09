@@ -162,11 +162,23 @@ function performLogin(){
 
 function onSuccessfulLogin(result) {
 	console.log("You are successfully logged in.");
+    var cognitoGroups = result.accessToken.payload["cognito:groups"];
+    for (var group in cognitoGroups) {
+        if (group == "Administrators") {
+            isAdmin = true;
+            break;
+        }
+    }
+    if (isAdmin) {
+        document.getElementById(".admin").style.display = "inline-block"; 
+    }
     showLoggedInView();
+    $("#usernameDiv").html(cognitoUser.getUsername());
 	//console.log('access token + ' + result.getAccessToken().getJwtToken());
     /*Use the idToken for Logins Map when Federating User Pools with Cognito Identity or when passing through an Authorization Header to an API Gateway Authorizer*/
     //console.log('idToken + ' + result.idToken.jwtToken);
 }
+
 
 function initiateApp(){
     cognitoUser = userPool.getCurrentUser();
