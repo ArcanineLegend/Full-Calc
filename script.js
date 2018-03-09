@@ -27,6 +27,7 @@ var poolData = {
 };
 var userPool = new AWSCognito.CognitoIdentityServiceProvider.CognitoUserPool(poolData);
 var cognitoUser;
+var isAdmin;
 
 function createAccount(){
 	console.log("executing createAccount()...");
