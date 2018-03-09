@@ -173,7 +173,7 @@ function onSuccessfulLogin(session) {
 function determineAdminStatus(session) {
     var cognitoGroups = session.accessToken.payload["cognito:groups"];
     for (var group in cognitoGroups) {
-        if (group == "Administrators") {
+        if (cognitoGroups[group] == "Administrators") {
             isAdmin = true;
             break;
         }
