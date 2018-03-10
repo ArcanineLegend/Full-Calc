@@ -7,45 +7,6 @@
 <meta http-equiv="Cache-control" content="NO-CACHE">
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <style>
------------------------------------------------	
-<div class="main_area">
-...
-...
-...
-</div>
-
-<!--
-// The html:
--->
-<div id="custom_cursor">HELLO</div>
-
-<!-- 
-// The script uses jQuery
--->
-<script type="text/javascript">
-     $(document).ready(function(){
-          var $area = $('.main_area').css({
-                     'cursor':'none'
-               }),
-          $myCursor = $('.custom_cursor').css({
-                     'position': 'fixed',
-                     'z-index': '999'
-               })
-          if ($myCursor.lenght){
-           $area
-               .on('mouseout.customCursor', function(){
-                     $myCursor.hide()
-               })
-               .on('mousemove.customCursor', function(event){
-                     $myCursor.show().css({
-                       'left': event.clientX - 20,
-                       'top': event.clientY + 7
-                     })
-               })
-          }
-     })
-</script>	
--------------------------------------------	
 	
 /* width */
 ::-webkit-scrollbar {
