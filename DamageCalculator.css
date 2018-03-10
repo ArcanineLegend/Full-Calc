@@ -16,11 +16,11 @@ IlPdqo+hYHnUt5ZPfnsHJyNiDtnpJyayNBkF6cWoYGAMY92U2hXHF/C1M8uP/ZtYdiuj26UdAdQQSXQE
 }
 
 .custom {
-  cursor: url(http://www.cursor.cc/cursor3d/23901.png), pointer;
+  cursor: url('http://www.cursor.cc/cursor3d/23901.png');
 }
 
 body{
- cursor: url(https://rocketdock.com/images/screenshots/green-cursor.png), pointer;
+ cursor: url('https://rocketdock.com/images/screenshots/green-cursor.png');
 }
 
 b{
