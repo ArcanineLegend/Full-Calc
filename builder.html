@@ -12,7 +12,8 @@
 <script>
 	$ yarn install
 	jQuery(function($) {
-  		$(document.getElementById('fb-editor')).formBuilder();
+  		var fbTemplate = document.getElementById('build-wrap');
+  $(fbTemplate).formBuilder();
 			});
 </script>
     #div1 {
@@ -68,7 +69,7 @@
         <button id=logoutbutton onclick="logout()">Logout</button>
     </div>
     <h2>Builder Tool</h2>
-    <div id="fb-editor"></div>
+    <div id="build-wrap"></div>
     <fieldset>
   <legend>Basic Functions</legend>
   <input type="button" value="Button 1">
