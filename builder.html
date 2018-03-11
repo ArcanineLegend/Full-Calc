@@ -14,7 +14,7 @@
 	$ yarn install
 	jQuery(function($) {
   		 var fb = $(document.getElementById('fb-editor')).formBuilder();
-  		$('language-selector').click(function() {
+  		$('.language-selector li').click(function() {
    		 var lang = this.id;
    		 fb.actions.setLang(lang)
   							});
@@ -78,7 +78,7 @@
   <li id="pt-BR">Português</li>
   <li id="zh-TW">繁體中文</li>
 </ul>
-    <div id="build-wrap"></div>
+    <div id="fb-editor"></div>
     <fieldset>
   <legend>Basic Functions</legend>
   <input type="button" value="Button 1">
