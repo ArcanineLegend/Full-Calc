@@ -13,8 +13,11 @@
 <script>
 	$ yarn install
 	jQuery(function($) {
-  		var fbTemplate = document.getElementById('build-wrap');
-  		$(fbTemplate).formBuilder();
+  		 var fb = $(document.getElementById('fb-editor')).formBuilder();
+  		$('.language-selector li').click(function() {
+   		 var lang = this.id;
+   		 fb.actions.setLang(lang)
+  							});
 			});
 </script>
     #div1 {
@@ -70,6 +73,11 @@
         <button id=logoutbutton onclick="logout()">Logout</button>
     </div>
     <h2>Builder Tool</h2>
+<ul class="language-selector">
+  <li id="en-US">English</li>
+  <li id="pt-BR">Português</li>
+  <li id="zh-TW">繁體中文</li>
+</ul>
     <div id="build-wrap"></div>
     <fieldset>
   <legend>Basic Functions</legend>
