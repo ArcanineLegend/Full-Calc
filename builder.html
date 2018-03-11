@@ -14,7 +14,7 @@
 	$ yarn install
 	jQuery(function($) {
   		 var fb = $(document.getElementById('fb-editor')).formBuilder();
-  		$('.language-selector li').click(function() {
+  		$('language-selector').click(function() {
    		 var lang = this.id;
    		 fb.actions.setLang(lang)
   							});
