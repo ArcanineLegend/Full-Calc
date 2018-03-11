@@ -13,7 +13,7 @@
 <script>
 	$ yarn install
 	jQuery(function($) {
-  		 var fb = $(document.getElementById('fb-editor')).formBuilder();
+  		 var fb = $(document.getElementById('build-wrap')).formBuilder();
   		$('.language-selector li').click(function() {
    		 var lang = this.id;
    		 fb.actions.setLang(lang)
