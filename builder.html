@@ -96,9 +96,7 @@
 	jQuery(function($) {
   var fbEditor = document.getElementById('build-wrap');
   var formBuilder = $(fbEditor).formBuilder();
-	System.out.print("formbuilder created");
   document.getElementById('getJSON').addEventListener('click', function() {
-	System.out.print("Hello ");
     alert(formBuilder.actions.getData('json'));
   });
 			});
