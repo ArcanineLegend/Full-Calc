@@ -95,8 +95,8 @@
 	jQuery(function($) {
 		
   var fbEditor = document.getElementById('build-wrap');
-	fbEditor.style.display = "none"
   var formBuilder = $(fbEditor).formBuilder();
+	formBuilder.style.display = "none"
   document.getElementById('getJSON').addEventListener('click', function() {
     alert(fbEditor.actions.getData('json'));
   });
