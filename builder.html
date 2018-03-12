@@ -93,7 +93,7 @@
 <script>
 	jQuery(function($) {
 		
-  var $fbEditor = document.getElementById('fb-editor');
+  var $fbTemplate = document.getElementById('fb-editor');
 		var options = {
 			disableFields[
 			'autocomplete',
@@ -102,8 +102,8 @@
 			'paragraph',
 			]
 		};
-		$(fbTemplate).formBuilder(options);
-  var formBuilder = $($fbEditor).formBuilder();
+		$($fbTemplate).formBuilder(options);
+  var formBuilder = $($fbTemplate).formBuilder();
   document.getElementById('Save').addEventListener('click', function() {
     alert(formBuilder.formData);
   });
