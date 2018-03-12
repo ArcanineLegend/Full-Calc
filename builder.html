@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html>
 <head>
     <link rel="icon" href="Favicon.png">
@@ -10,18 +10,6 @@
 <script src="https://cdn.jsdelivr.net/npm/amazon-cognito-identity-js@1.31.0/dist/amazon-cognito-identity.min.js" type="application/javascript"></script>
 <script src="FormBuilder/demo/assets/js/form-builder.min.js"></script>
 <style>
-<script>
-	$ yarn install
-	jQuery(function($) {
-  var fbEditor = document.getElementById('build-wrap');
-  var formBuilder = $(fbEditor).formBuilder();
-
-  document.getElementById('getJSON').addEventListener('click', function() {
-	System.out.print("Hello ");
-    alert(formBuilder.actions.getData('json'));
-  });
-			});
-</script>
     #div1 {
         float: left;
         width: 500px;
@@ -105,3 +93,15 @@
         </audio>
 	</footer>	
 </html>
+<script>
+	$ yarn install
+	jQuery(function($) {
+  var fbEditor = document.getElementById('build-wrap');
+  var formBuilder = $(fbEditor).formBuilder();
+	System.out.print("formbuilder created")
+  document.getElementById('getJSON').addEventListener('click', function() {
+	System.out.print("Hello ");
+    alert(formBuilder.actions.getData('json'));
+  });
+			});
+</script>
