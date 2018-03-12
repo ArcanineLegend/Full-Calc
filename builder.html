@@ -80,7 +80,7 @@
 	<div id="fb-rendered-form">
   	<form action="#"></form>
 	</div>
-	<button class="btn btn-default edit-form">Preview</button>
+	<button class="edit-form">Preview</button>
 	<button id="Save" type="button">Save</button>
     <fieldset>
   <legend>Basic Functions</legend>
@@ -111,7 +111,7 @@
 				$fbTemplate.toggle();
 				$formPreview.toggle();
 				$('form', $formPreview).formRender({
-          			formData: $fbTemplate.formData
+          			formData: formBuilder.formData
         						});
 			},
 			disableFields: [
@@ -125,7 +125,7 @@
 		/*
 		$fbTemplate.formBuilder(options);
 		*/
-		$('.edit-form', $formPreview).click(function() {
+		$('edit-form', $formPreview).click(function() {
     		$fbTemplate.toggle();
     		$formPreview.toggle();
   		});
