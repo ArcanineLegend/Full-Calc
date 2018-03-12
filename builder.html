@@ -68,9 +68,8 @@
   <li id="zh-TW">繁體中文</li>
 </ul>
 
-  <button id="getJSON" type="button">Get JSON Data</button>
-	<div id="build-wrap"></div>
-	
+	<div id="fb-editor"></div>
+	<button id="Save" type="button">Save</button>
     <fieldset>
   <legend>Basic Functions</legend>
   <input type="button" value="Button 1">
@@ -94,11 +93,10 @@
 <script>
 	jQuery(function($) {
 		
-  var fbEditor = document.getElementById('build-wrap');
-  var formBuilder = $(fbEditor).formBuilder();
-	formBuilder.style.display = "none"
-  document.getElementById('getJSON').addEventListener('click', function() {
-    alert(fbEditor.actions.getData('json'));
+  var $fbEditor = document.getElementById('fb-editor');
+  var formBuilder = $($fbEditor).formBuilder();
+  document.getElementById('Save').addEventListener('click', function() {
+    alert(formBuilder.formData);
   });
 			});
 </script>
