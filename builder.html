@@ -94,6 +94,15 @@
 	jQuery(function($) {
 		
   var $fbEditor = document.getElementById('fb-editor');
+		var options = {
+			disableFields[
+			'autocomplete',
+			'file',
+			'date',
+			'paragraph',
+			]
+		};
+		$(fbTemplate).formBuilder(options);
   var formBuilder = $($fbEditor).formBuilder();
   document.getElementById('Save').addEventListener('click', function() {
     alert(formBuilder.formData);
