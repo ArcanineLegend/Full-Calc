@@ -94,7 +94,7 @@
 	jQuery(function($) {
   var $fbTemplate = document.getElementById('fb-editor'),
       $formPreview = $(document.getElementById('fb-rendered-form')),
-		var options = {
+		 options = {
 			onSave: function() {
 				$fbTemplate.toggle();
 				$formPreview.toggle();
@@ -109,13 +109,14 @@
 			'paragraph',
 			]
 		},
+      formBuilder = $($fbTemplate).formBuilder(),
 		$($fbTemplate).formBuilder(options);
 		
 		$('.edit-form', $formPreview).click(function() {
     		$fbTemplate.toggle();
     		$formPreview.toggle();
   		});
-  var formBuilder = $($fbTemplate).formBuilder();
+  
   document.getElementById('Save').addEventListener('click', function() {
     alert($fbTemplate.formData);
   });
