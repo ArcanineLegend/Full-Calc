@@ -95,7 +95,7 @@
 	jQuery(function($) {
 		
   var fbEditor = document.getElementById('build-wrap');
-  
+  fbEditor = $(fbEditor);
   document.getElementById('getJSON').addEventListener('click', function() {
     alert(fbEditor.actions.getData('json'));
   });
