@@ -92,20 +92,32 @@
 </html>
 <script>
 	jQuery(function($) {
-		
-  var $fbTemplate = document.getElementById('fb-editor');
+  var $fbTemplate = document.getElementById('fb-editor'),
+      $formPreview = $(document.getElementById('fb-rendered-form')),
 		var options = {
+			onSave: function() {
+				$fbTemplate.toggle();
+				$formPreview.toggle();
+				$('form', $formPreview).formRender({
+          			formData: $fbTemplate.formData
+        						});
+			},
 			disableFields: [
 			'autocomplete',
 			'file',
 			'date',
 			'paragraph',
 			]
-		};
+		},
 		$($fbTemplate).formBuilder(options);
+		
+		$('.edit-form', $formPreview).click(function() {
+    		$fbTemplate.toggle();
+    		$formPreview.toggle();
+  		});
   var formBuilder = $($fbTemplate).formBuilder();
   document.getElementById('Save').addEventListener('click', function() {
-    alert(formBuilder.formData);
+    alert($fbTemplate.formData);
   });
 			});
 </script>
