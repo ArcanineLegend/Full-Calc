@@ -96,7 +96,7 @@
 		
   var fbEditor = document.getElementById('build-wrap');
 	fbEditor.style.display = "none"
-  fbEditor = $(fbEditor).formBuilder();
+  var formBuilder = $(fbEditor).formBuilder();
   document.getElementById('getJSON').addEventListener('click', function() {
     alert(fbEditor.actions.getData('json'));
   });
