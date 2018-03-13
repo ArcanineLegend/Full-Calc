@@ -31,30 +31,25 @@ var isAdmin;
 
 function createAccount(){
 	console.log("executing createAccount()...");
-	
 	console.log($(".createAccountDiv"));
-	
 	var dataObj = {
         email: document.getElementById("formEM").value,
 		usern: document.getElementById("formUN").value,
 		passw: document.getElementById("formPW").value
 	};
-	
     var attributeList = [];
     var dataEmail = {
         Name : 'email',
         Value : dataObj.email
     };
-    
 	console.log("Retrieved this username from the form: "+dataObj.usern);
 	console.log("Retrieved this password from the form: "+dataObj.passw);
 	
     var attributeEmail = new AWSCognito.CognitoIdentityServiceProvider.CognitoUserAttribute(dataEmail);
     attributeList.push(attributeEmail);
-    
     userPool.signUp(dataObj.usern, dataObj.passw, attributeList, null, onSignUpResult);
-	
     console.log('End of createAccount function');
+    window.location.href = "dashboard.html";
 };
 
 function logout(){
@@ -81,8 +76,7 @@ function showNotLoggedInView(){
 function showLoggedInView(){
 	console.log("executing showLoggedInView()...");
 	window.location.href = "dashboard.html";
-    	console.log('End of showLoggedInView function');
-    
+    	console.log('End of showLoggedInView function'); 
 }
 
 function onSignUpResult(err, result){
@@ -96,8 +90,6 @@ function onSignUpResult(err, result){
 	console.log('user name is ' + cognitoUser.getUsername());
 	showLoggedInView();
 }
-
-
 
 // Config for a service user who has roles to access Lambda, S3 and other services included in Amazon's basic SDK.
 var accessKeyId = 'putyouraccessidhere';
@@ -153,11 +145,9 @@ function performLogin(){
         onFailure: function(err) {
             alert(err);
         },
-		
 		newPasswordRequired: function(obj){
 			alert("new password required: "+JSON.stringify(obj));
 		},
- 
     });
 }
 
