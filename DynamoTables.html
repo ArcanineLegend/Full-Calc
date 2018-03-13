@@ -37,15 +37,18 @@ AWS.config.update({
 //Creates the event table in our dynamoDB database. 
 function createTemplateTable(){
 var params = {
-    TableName : "TemplateDB",
+    TableName : "TemplateDBForBuilder",
     //Gives the table a schema
     KeySchema: [
         { AttributeName: "UserName", KeyType: "STRING"},
     ],
     //Setting the attributes of the table.
     AttributeDefinitions: [
-        { AttributeName: "TemplateTitle", AttributeType: "S" },
-	    { AttributeName: "Data", AttributeType: "S"},
+        { AttributeName: "type", AttributeType: "S" },
+	    { AttributeName: "label", AttributeType: "S"},
+	    { AttributeName: "className", AttributeType: "S"},
+	    { AttributeName: "subtype", AttributeType: "S"},
+	    { AttributeName: "values", AttributeType: "M"},
     ],
     //How many times it reads and writes. KEEP THIS AT 5 SO WE DON'T GO OVER OUR FREE LIMIT.
     ProvisionedThroughput: {
