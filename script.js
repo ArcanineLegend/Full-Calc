@@ -32,24 +32,28 @@ var isAdmin;
 function createAccount(){
 	console.log("executing createAccount()...");
 	console.log($(".createAccountDiv"));
+	
 	var dataObj = {
         email: document.getElementById("formEM").value,
 		usern: document.getElementById("formUN").value,
 		passw: document.getElementById("formPW").value
 	};
+	
     var attributeList = [];
     var dataEmail = {
         Name : 'email',
         Value : dataObj.email
     };
+    
 	console.log("Retrieved this username from the form: "+dataObj.usern);
 	console.log("Retrieved this password from the form: "+dataObj.passw);
 	
     var attributeEmail = new AWSCognito.CognitoIdentityServiceProvider.CognitoUserAttribute(dataEmail);
     attributeList.push(attributeEmail);
+    
     userPool.signUp(dataObj.usern, dataObj.passw, attributeList, null, onSignUpResult);
+	
     console.log('End of createAccount function');
-    showLoggedInView();
 };
 
 function logout(){
