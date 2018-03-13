@@ -193,13 +193,7 @@ function determineAdminStatus(session) {
 }
 
 function initiateApp(session){
-	if (cognitoUser.getUsername() == null || "") {
-		console.log("if triggered properly");
-		$("#usernameDiv").html("Guest");
-	} else {
-		console.log("else triggered properly");
-    		$("#usernameDiv").html(cognitoUser.getUsername());
-	}
+	
     determineAdminStatus(session);
 }
 
@@ -214,6 +208,13 @@ function checkForSignedInUser() {
                 console.log("Even though user sesssion was found in browser storage, the session is invalid.");
                 return;
             }
+		if (cognitoUser.getUsername() == null || "") {
+		console.log("if triggered properly");
+		$("#usernameDiv").html("Guest");
+	} else {
+		console.log("else triggered properly");
+    		$("#usernameDiv").html(cognitoUser.getUsername());
+	}
             initiateApp(session);
         });
     }
