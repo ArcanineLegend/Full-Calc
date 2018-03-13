@@ -201,7 +201,6 @@ function checkForSignedInUser() {
     cognitoUser = userPool.getCurrentUser();
     if (cognitoUser == null) {
         console.log("No session found in browser storage");
-	console.log("if triggered properly");
 	$("#usernameDiv").html("Guest"); 
     } else {
         console.log("A user session was found in browser storage: "+JSON.stringify(cognitoUser));
