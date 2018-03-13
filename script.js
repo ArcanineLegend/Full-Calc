@@ -49,7 +49,7 @@ function createAccount(){
     attributeList.push(attributeEmail);
     userPool.signUp(dataObj.usern, dataObj.passw, attributeList, null, onSignUpResult);
     console.log('End of createAccount function');
-    window.location.href = "dashboard.html";
+    showLoggedInView();
 };
 
 function logout(){
