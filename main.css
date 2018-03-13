@@ -13,6 +13,10 @@
     color: black;
 }
 
+#logosDiv {
+    position: Centered;
+}
+
 /*All buttons but 'Sign In'*/ 
 button {
     font-size: 15px;
