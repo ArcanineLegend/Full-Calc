@@ -13,9 +13,9 @@
     color: black;
 }
 
-#logosDiv {
+/* #logosDiv {
     position: Centered;
-}
+} */
 
 /*All buttons but 'Sign In'*/ 
 button {
@@ -209,13 +209,22 @@ div.container {
     border: 1px solid gray;
 }
 
-header, footer {
+header{
     padding: 1em;
     color: white;
     background-color: black;
     clear: left;
     text-align: center;
 }
+
+footer{
+    padding: 1em;
+    color: white;
+    background-color: #414242;
+    clear: left;
+    text-align: center;
+}
+
 article {
     margin-left: 170px;
     border-left: 1px solid gray;
