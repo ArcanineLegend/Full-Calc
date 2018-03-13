@@ -263,8 +263,3 @@ function computedamage() {
         document.getElementById("output1").innerText = totalDamage;
 	document.getElementById("output2").innerText = fullKIAtk;
     }
-
-jQuery(function($) {
-  var fbTemplate = document.getElementById('build-wrap');
-  $(fbTemplate).formBuilder();
-});
