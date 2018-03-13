@@ -7,8 +7,7 @@ export default class controlText extends control {
 
       // mi18n custom mappings (defaults to camelCase type)
       mi18n: {
-        date: 'dateField',
-        file: 'fileUpload'
+        add: 'additionInput'
       }
     };
   }
@@ -20,4 +19,5 @@ export default class controlText extends control {
     return this.markup('input', null, this.config);
   }
 }
-control.register('number');
+control.register('number', additionNumber);
+control.register(['number', 'negative', 'positive'], additionNumber 'number');
