@@ -194,8 +194,10 @@ function determineAdminStatus(session) {
 
 function initiateApp(session){
 	if (cognitoUser.getUsername() == null || "") {
+		console.log("if triggered properly");
 		$("#usernameDiv").html("Guest");
 	} else {
+		console.log("else triggered properly");
     		$("#usernameDiv").html(cognitoUser.getUsername());
 	}
     determineAdminStatus(session);
