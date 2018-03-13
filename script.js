@@ -193,7 +193,11 @@ function determineAdminStatus(session) {
 }
 
 function initiateApp(session){
-    $("#usernameDiv").html(cognitoUser.getUsername());
+	if (cognitoUser.getUsername() == null) {
+		$("#usernameDiv").html(guest);
+	} else {
+    		$("#usernameDiv").html(cognitoUser.getUsername());
+	}
     determineAdminStatus(session);
 }
 
