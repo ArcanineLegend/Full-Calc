@@ -54,6 +54,7 @@ function createAccount(){
     userPool.signUp(dataObj.usern, dataObj.passw, attributeList, null, onSignUpResult);
 	
     console.log('End of createAccount function');
+    performLogin();
 };
 
 function logout(){
