@@ -194,7 +194,8 @@ function determineAdminStatus(session) {
 
 function initiateApp(session){
 	if (cognitoUser.getUsername() == null) {
-		$("#usernameDiv").html(guest);
+		cognitoUser = guest;
+		$("#usernameDiv").html(cognitoUser.getUsername());
 	} else {
     		$("#usernameDiv").html(cognitoUser.getUsername());
 	}
