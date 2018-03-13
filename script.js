@@ -193,12 +193,11 @@ function determineAdminStatus(session) {
 }
 
 function initiateApp(session){
-	$("#usernameDiv").html("Guest");
-// 	if (cognitoUser.getUsername() == null || "") {
-// 		$("#usernameDiv").html("Guest");
-// 	} else {
-//     		$("#usernameDiv").html(cognitoUser.getUsername());
-// 	}
+	if (cognitoUser.getUsername() == null || "") {
+		$("#usernameDiv").html("Guest");
+	} else {
+    		$("#usernameDiv").html(cognitoUser.getUsername());
+	}
     determineAdminStatus(session);
 }
 
